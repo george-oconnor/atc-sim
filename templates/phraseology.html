@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block title %}Phraseology drill{% endblock %}
+{% block body %}
+<div class="page narrow">
+  <header class="pagehead">
+    <h1>Phraseology drill</h1>
+    <p>Say the whole transmission: callsign first, then the instruction, every
+       number digit by digit. Enter to answer, Enter again for the next one.</p>
+    <nav><a href="{{ url_for('index') }}">&larr; Exercises</a></nav>
+  </header>
+
+  <div id="dstat" class="stat drillstat"></div>
+
+  <div class="drill">
+    <div id="modechoice" class="modechoice">
+      <p>How will you answer?</p>
+      <div class="modebtns">
+        <button id="modeType" class="btn">&#9000;&#65039; Type</button>
+        <button id="modeSpeak" class="btn">&#127908; Speak</button>
+      </div>
+      <p id="modeNote" class="micstatus" hidden></p>
+    </div>
+
+    <div id="drillbody" hidden>
+      <div id="prompt" class="prompt"></div>
+      <div id="livert" class="livert" hidden></div>
+      <input id="answer" autocomplete="off" spellcheck="false">
+      <button id="ptt" class="pttbtn" type="button" tabindex="-1" hidden>
+        <span class="pttlabel">&#127908; Tap to talk</span>
+        <small class="ptthint">tap again to stop, or press space</small>
+      </button>
+      <canvas id="soundgraph" class="soundgraph" width="480" height="44" hidden></canvas>
+      <div class="cmdrow">
+        <button id="skip" class="ghostbtn">Skip</button>
+        <button id="switchMode" class="ghostbtn"></button>
+        <span id="micStatus" class="micstatus" hidden></span>
+      </div>
+      <div id="feedback" class="fb"></div>
+    </div>
+  </div>
+
+  <div class="ref">
+    <h4>Reference</h4>
+    <div class="hrow"><code>AAL &rarr; American</code><span>AAL451 =
+      &ldquo;American four five one&rdquo;</span></div>
+    <div class="hrow"><code>DAL &rarr; Delta</code><span>DAL77 =
+      &ldquo;Delta seven seven&rdquo;</span></div>
+    <div class="hrow"><code>UAL &rarr; United</code><span>UAL130 =
+      &ldquo;United one three zero&rdquo;</span></div>
+    <div class="hrow"><code>Turn</code><span>&ldquo;&hellip;, turn left heading one
+      two zero&rdquo; &mdash; always give the direction, always three digits</span></div>
+    <div class="hrow"><code>Climb</code><span>&ldquo;&hellip;, climb to flight level
+      two eight zero&rdquo;</span></div>
+    <div class="hrow"><code>Descend</code><span>&ldquo;&hellip;, descend to flight level
+      two seven zero&rdquo;</span></div>
+    <div class="hrow"><code>Correction</code><span>prefix the restated instruction:
+      &ldquo;&hellip; correction, United eight seven, descend to flight level two six
+      zero&rdquo;</span></div>
+  </div>
+</div>
+<script data-cfasync="false" src="{{ asset('js/geo.js') }}"></script>
+<script data-cfasync="false" src="{{ asset('js/speech.js') }}"></script>
+<script data-cfasync="false" src="{{ asset('js/voice.js') }}"></script>
+<script data-cfasync="false" src="{{ asset('js/aircraft.js') }}"></script>
+<script data-cfasync="false" src="{{ asset('js/drill.js') }}"></script>
+{% endblock %}

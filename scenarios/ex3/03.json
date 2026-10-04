@@ -1,0 +1,344 @@
+{
+ "id": "ex3",
+ "order": 3,
+ "exercise": 3,
+ "name": "Exercise 3 — The crossing",
+ "difficulty": "Hard",
+ "duration_min": 21,
+ "summary": "Two corridors cross. Eleven to fourteen aircraft, all heading for the same piece of sky.",
+ "separation": {
+  "lateral_nm": 3,
+  "vertical_ft": 1000
+ },
+ "corridors": [
+  {
+   "name": "ALPHA",
+   "path": [
+    [
+     -26.28,
+     -15.74
+    ],
+    [
+     26.29,
+     8.77
+    ]
+   ],
+   "width_nm": 22,
+   "entry": "SOUTHWEST",
+   "exit": "NORTHEAST"
+  },
+  {
+   "name": "BRAVO",
+   "path": [
+    [
+     -2.58,
+     28.56
+    ],
+    [
+     7.5,
+     -28.56
+    ]
+   ],
+   "angle": 105,
+   "width_nm": 22,
+   "entry": "NORTH",
+   "exit": "SOUTH"
+  }
+ ],
+ "traffic": [
+  {
+   "callsign": "DAL563",
+   "type": "E175",
+   "fl": 300,
+   "exitFl": 320,
+   "speed": 295,
+   "corridor": 1,
+   "dir": 1,
+   "t": 48,
+   "x": 0,
+   "y": 26.98,
+   "hdg": 170,
+   "off": -2.26,
+   "s0": 2,
+   "role": "conflict:cross",
+   "event": 4
+  },
+  {
+   "callsign": "AAL857",
+   "type": "A320",
+   "fl": 300,
+   "exitFl": 300,
+   "speed": 310,
+   "corridor": 0,
+   "dir": -1,
+   "t": 104,
+   "x": 24.17,
+   "y": 8.58,
+   "hdg": 245,
+   "off": -0.72,
+   "s0": 2,
+   "role": "conflict:cross",
+   "event": 4
+  },
+  {
+   "callsign": "UAL997",
+   "type": "E175",
+   "fl": 220,
+   "exitFl": 210,
+   "speed": 275,
+   "corridor": 1,
+   "dir": -1,
+   "t": 131,
+   "x": 10.78,
+   "y": -25.95,
+   "hdg": 350,
+   "off": -3.68,
+   "s0": 2,
+   "role": "trap:headon",
+   "event": 3
+  },
+  {
+   "callsign": "DAL716",
+   "type": "B738",
+   "fl": 240,
+   "exitFl": 240,
+   "speed": 270,
+   "corridor": 1,
+   "dir": 1,
+   "t": 231,
+   "x": -2.5,
+   "y": 26.54,
+   "hdg": 170,
+   "off": 0.27,
+   "s0": 2,
+   "role": "conflict:cross",
+   "event": 2
+  },
+  {
+   "callsign": "UAL998",
+   "type": "A20N",
+   "fl": 210,
+   "exitFl": 210,
+   "speed": 305,
+   "corridor": 1,
+   "dir": 1,
+   "t": 268,
+   "x": 1.74,
+   "y": 27.29,
+   "hdg": 170,
+   "off": -4.04,
+   "s0": 2,
+   "role": "trap:headon",
+   "event": 3
+  },
+  {
+   "callsign": "AAL227",
+   "type": "B38M",
+   "fl": 240,
+   "exitFl": 260,
+   "speed": 320,
+   "corridor": 0,
+   "dir": 1,
+   "t": 299,
+   "x": -23.31,
+   "y": -17.37,
+   "hdg": 65,
+   "off": 2.74,
+   "s0": 2,
+   "role": "conflict:cross",
+   "event": 2
+  },
+  {
+   "callsign": "UAL373",
+   "type": "A319",
+   "fl": 280,
+   "exitFl": 280,
+   "speed": 280,
+   "corridor": 1,
+   "dir": -1,
+   "t": 387,
+   "x": 8.63,
+   "y": -26.33,
+   "hdg": 350,
+   "off": -1.5,
+   "s0": 2,
+   "role": "conflict:cross",
+   "event": 1
+  },
+  {
+   "callsign": "AAL33",
+   "type": "B763",
+   "fl": 280,
+   "exitFl": 280,
+   "speed": 305,
+   "corridor": 0,
+   "dir": -1,
+   "t": 456,
+   "x": 23.26,
+   "y": 10.53,
+   "hdg": 245,
+   "off": -2.87,
+   "s0": 2,
+   "role": "conflict:cross",
+   "event": 1
+  },
+  {
+   "callsign": "DAL80",
+   "type": "B738",
+   "fl": 290,
+   "exitFl": 290,
+   "speed": 315,
+   "corridor": 1,
+   "dir": 1,
+   "t": 489,
+   "x": -3.03,
+   "y": 26.45,
+   "hdg": 170,
+   "off": 0.81,
+   "s0": 2,
+   "role": "conflict:cross",
+   "event": 5
+  },
+  {
+   "callsign": "UAL34",
+   "type": "B738",
+   "fl": 290,
+   "exitFl": 280,
+   "speed": 320,
+   "corridor": 0,
+   "dir": -1,
+   "t": 519,
+   "x": 23.89,
+   "y": 9.18,
+   "hdg": 245,
+   "off": -1.38,
+   "s0": 2,
+   "role": "conflict:cross",
+   "event": 5
+  },
+  {
+   "callsign": "DAL151",
+   "type": "B738",
+   "fl": 210,
+   "exitFl": 210,
+   "speed": 315,
+   "corridor": 1,
+   "dir": 1,
+   "t": 580,
+   "x": -3.64,
+   "y": 26.34,
+   "hdg": 170,
+   "off": 1.43,
+   "s0": 2,
+   "role": "conflict:cross",
+   "event": 0
+  },
+  {
+   "callsign": "DAL35",
+   "type": "E175",
+   "fl": 210,
+   "exitFl": 210,
+   "speed": 290,
+   "corridor": 0,
+   "dir": -1,
+   "t": 616,
+   "x": 25.68,
+   "y": 5.35,
+   "hdg": 245,
+   "off": 2.84,
+   "s0": 2,
+   "role": "conflict:cross",
+   "event": 0
+  }
+ ],
+ "view": {
+  "x": 0,
+  "y": 0,
+  "range_nm": 34
+ },
+ "briefing": "Two corridors cross at about 75°: ALPHA runs from the south-west to the north-east, BRAVO from the north to the south. 12 aircraft. Work out early which pairs will be over the crossing together at the same level and fix them while they are still far apart — there is no time to fix them late.",
+ "seed": 26,
+ "variant": "03",
+ "solution": [
+  [
+   63,
+   "Delta five six three, climb to flight level three two zero"
+  ],
+  [
+   146,
+   "United nine nine seven, descend to flight level two one zero"
+  ],
+  [
+   268,
+   "United nine nine seven, climb to flight level two two zero"
+  ],
+  [
+   314,
+   "American two two seven, climb to flight level two six zero"
+  ],
+  [
+   454,
+   "United nine nine seven, descend to flight level two one zero"
+  ],
+  [
+   460,
+   "United three seven three, climb to flight level two nine zero"
+  ],
+  [
+   489,
+   "United three seven three, climb to flight level three zero zero"
+  ],
+  [
+   519,
+   "Delta eight zero, descend to flight level two eight zero"
+  ],
+  [
+   630,
+   "United three seven three, descend to flight level two eight zero"
+  ],
+  [
+   636,
+   "Delta one five one, climb to flight level two two zero"
+  ],
+  [
+   643,
+   "United three seven three, descend to flight level two nine zero"
+  ],
+  [
+   651,
+   "United three seven three, descend to flight level two eight zero"
+  ],
+  [
+   658,
+   "Delta eight zero, descend to flight level two seven zero"
+  ],
+  [
+   664,
+   "United three four, descend to flight level two eight zero"
+  ],
+  [
+   717,
+   "Delta eight zero, climb to flight level two nine zero"
+  ],
+  [
+   868,
+   "Delta one five one, descend to flight level two one zero"
+  ]
+ ],
+ "stats": {
+  "conflicts": 5,
+  "traps": 1,
+  "level_changes": 4,
+  "peak": 10,
+  "solver": {
+   "losses": 0,
+   "handled": 12,
+   "correct": 12,
+   "excursions": 0,
+   "faults": 0,
+   "score": 1200,
+   "closest": 4.19,
+   "t": 1105
+  }
+ }
+}

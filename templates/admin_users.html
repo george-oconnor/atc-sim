@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}Users{% endblock %}
+{% block body %}
+<div class="page">
+  {% include "_account.html" %}
+  <header class="pagehead">
+    <h1>Users</h1>
+    <p>Reviewers can read transcription reports; admins can also manage accounts.</p>
+    <nav><a href="{{ url_for('index') }}">&larr; Exercises</a></nav>
+  </header>
+  <table class="runs">
+    <thead><tr><th>Email</th><th>Joined</th><th>Last login</th><th>Runs</th><th>Reports</th>
+      <th>Role</th><th></th></tr></thead>
+    <tbody>
+    {% for u in users %}
+      <tr>
+        <td>{{ u.email }}</td>
+        <td>{{ u.created_at | int | datetimeformat }}</td>
+        <td>{{ (u.last_login_at | int | datetimeformat) if u.last_login_at else "—" }}</td>
+        <td>{{ u.n_runs }}</td>
+        <td>{{ u.n_reports }}</td>
+        {% if u.id == me.id %}
+        <td>{{ u.role }}</td><td class="dim">you</td>
+        {% else %}
+        <td>
+          <form method="post" class="inline">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <input type="hidden" name="id" value="{{ u.id }}">
+            <input type="hidden" name="action" value="role">
+            <select name="role" onchange="this.form.submit()">
+              {% for role in roles %}<option{{ " selected" if role == u.role }}>{{ role }}</option>{% endfor %}
+            </select>
+          </form>
+        </td>
+        <td>
+          <form method="post" class="inline"
+                onsubmit="return confirm('Reset the password for ' + {{ u.email|tojson|forceescape }} + '?')">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <input type="hidden" name="id" value="{{ u.id }}">
+            <input type="hidden" name="action" value="reset">
+            <button type="submit" class="linkbtn">Reset password</button>
+          </form>
+        </td>
+        {% endif %}
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

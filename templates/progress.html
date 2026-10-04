@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Progress{% endblock %}
+{% block body %}
+<div class="page">
+  {% include "_account.html" %}
+  <header class="pagehead">
+    <h1>Progress</h1>
+    {% if not me %}<p>Runs flown in this browser.
+      <a href="{{ url_for('register', next=request.path) }}">Register</a> or
+      <a href="{{ url_for('login', next=request.path) }}">log in</a> to keep them with an
+      account, on any device.</p>{% endif %}
+    <nav><a href="{{ url_for('index') }}">&larr; Exercises</a></nav>
+  </header>
+  {% if runs %}
+  <table class="runs">
+    <thead><tr><th>When</th><th>Exercise</th><th>Score</th><th>Correct</th>
+      <th>Losses</th><th>Calls</th></tr></thead>
+    <tbody>
+    {% for r in runs %}
+      <tr>
+        <td>{{ r.finished_at | int | datetimeformat }}</td>
+        <td>{{ names.get(r.scenario, r.scenario) }}{% if r.variant %} <small class="variant">{{ r.variant }}</small>{% endif %}</td>
+        <td class="{{ 'neg' if r.score < 0 }}"><b>{{ r.score }}</b></td>
+        <td>{{ r.correct }}/{{ r.handled }}</td>
+        <td class="{{ 'neg' if r.losses }}">{{ r.losses }}</td>
+        <td>{{ r.commands }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+    <p class="empty">No runs yet. <a href="{{ url_for('index') }}">Fly one.</a></p>
+  {% endif %}
+</div>
+{% endblock %}

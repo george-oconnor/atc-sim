@@ -1,0 +1,7 @@
+Flask>=3.0
+websocket-client>=1.8   # pilot voices: OpenAI Realtime API
+sentry-sdk[flask]>=2.0  # error tracking (optional, needs SENTRY_DSN)
+
+# tests only
+dukpy>=0.3      # embedded JS engine, to run the simulator headlessly
+esprima>=4.0    # JS syntax check

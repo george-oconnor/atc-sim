@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Account{% endblock %}
+{% block body %}
+<div class="page narrow">
+  {% include "_account.html" %}
+  <header class="pagehead">
+    <h1 class="email">{{ me.email }}</h1>
+    <p>{{ me.role|capitalize }} &middot; joined {{ me.created_at | int | datetimeformat }}
+      &middot; {{ n_runs }} run{{ "s" if n_runs != 1 }} &middot;
+      {{ n_reports }} report{{ "s" if n_reports != 1 }}</p>
+    <nav><a href="{{ url_for('index') }}">&larr; Exercises</a> &nbsp;&middot;&nbsp;
+      <a href="{{ url_for('progress') }}">Progress</a></nav>
+  </header>
+  <form method="post" class="form">
+    <h2>Change password</h2>
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    {% if error %}<p class="flash err">{{ error }}</p>{% endif %}
+    <label>Current password <input name="current" type="password"
+      autocomplete="current-password" required></label>
+    <label>New password <input name="password" type="password" autocomplete="new-password"
+      minlength="8" required></label>
+    <label>New password again <input name="password2" type="password"
+      autocomplete="new-password" minlength="8" required></label>
+    <button class="btn" type="submit">Change password</button>
+  </form>
+</div>
+{% endblock %}

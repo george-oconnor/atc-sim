@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Reports{% endblock %}
+{% block body %}
+<div class="page">
+  {% include "_account.html" %}
+  <header class="pagehead">
+    <h1>Transcription reports</h1>
+    <nav><a href="{{ url_for('index') }}">&larr; Exercises</a>
+      {% for s in ("open", "resolved", "all") %} &nbsp;&middot;&nbsp;
+        {% if s == status %}<b>{{ s|capitalize }}</b>{% else %}<a
+          href="{{ url_for('admin_reports', status=s) }}">{{ s|capitalize }}</a>{% endif %}
+        {% if s != "all" %}<small class="variant">{{ counts.get(s, 0) }}</small>{% endif %}
+      {% endfor %}</nav>
+  </header>
+  {% if reports %}
+  <table class="runs reports">
+    <thead><tr><th>#</th><th>When</th><th>Who</th><th>Heard</th><th>Said</th><th></th></tr></thead>
+    <tbody>
+    {% for r in reports %}
+      <tr>
+        <td><a href="{{ url_for('admin_report', rid=r.id) }}">{{ r.id }}</a></td>
+        <td>{{ r.created_at | int | datetimeformat }}</td>
+        <td>{{ r.email }}</td>
+        <td class="heard"><a href="{{ url_for('admin_report', rid=r.id) }}">{{ r.heard or "—" }}</a></td>
+        <td>{{ r.said or "—" }}</td>
+        <td>{% if r.audio %}<span title="Has a recording">&#127908;</span>{% endif %}
+          {% if r.status == "resolved" %}<span class="best" title="Resolved">&#10003;</span>{% endif %}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+    <p class="empty">No {{ status if status != "all" else "" }} reports.</p>
+  {% endif %}
+</div>
+{% endblock %}

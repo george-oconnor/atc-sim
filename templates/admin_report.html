@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}Report #{{ r.id }}{% endblock %}
+{% block body %}
+<div class="page">
+  {% include "_account.html" %}
+  <header class="pagehead">
+    <h1>Report #{{ r.id }} <small class="variant">{{ r.status }}</small></h1>
+    <p>{{ r.email }} &middot; {{ r.created_at | int | datetimeformat }}
+      {% if detail.scenario %}&middot; {{ detail.scenario }}{% endif %}</p>
+    <nav><a href="{{ url_for('admin_reports') }}">&larr; Reports</a></nav>
+  </header>
+
+  <dl class="rdetail">
+    <dt>Actually said</dt><dd>{{ r.said or "— (not given)" }}</dd>
+    {% if r.audio %}
+    <dt>Recording</dt>
+    <dd><audio controls preload="metadata" src="{{ url_for('admin_report_audio', rid=r.id) }}"></audio>
+      <small class="variant">said again after the fact, not the original attempt</small></dd>
+    {% endif %}
+    {% if detail.aircraft %}<dt>On frequency</dt><dd>{{ detail.aircraft|join(", ") }}</dd>{% endif %}
+    <dt>Browser</dt><dd class="dim">{{ detail.user_agent }}</dd>
+  </dl>
+
+  <h2>Transmissions</h2>
+  {% for a in detail.attempts or [] %}
+  <div class="attempt{{ ' flagged' if a.flagged }}">
+    <div><b>{{ a.heard }}</b> {% if a.flagged %}<span class="tag">flagged</span>{% endif %}</div>
+    <div class="dim">{{ a.result }}</div>
+    {% for phrase in a.alternatives %}
+      <ol class="alts">
+      {% for alt in phrase %}<li>{{ alt.transcript }} <small class="variant">{{ "%.2f"|format(alt.confidence) }}</small></li>{% endfor %}
+      </ol>
+    {% endfor %}
+  </div>
+  {% else %}<p class="empty">None attached.</p>{% endfor %}
+
+  <form method="post" class="form wide">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <label>Note <textarea name="note" rows="3">{{ r.note }}</textarea></label>
+    <div class="formrow">
+      {% if r.status == "open" %}
+      <button class="btn" name="status" value="resolved">Resolve</button>
+      <button class="btn ghost" name="status" value="open">Save note</button>
+      {% else %}
+      <button class="btn ghost" name="status" value="open">Reopen</button>
+      <button class="btn ghost" name="status" value="resolved">Save note</button>
+      {% endif %}
+    </div>
+  </form>
+</div>
+{% endblock %}

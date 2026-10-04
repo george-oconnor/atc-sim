@@ -1,0 +1,137 @@
+{
+ "id": "ex1",
+ "order": 1,
+ "exercise": 1,
+ "name": "Exercise 1 — Familiarisation",
+ "difficulty": "Easy",
+ "duration_min": 16,
+ "summary": "A straight corridor and four to six aircraft. Learn the scan, the label and the three instructions.",
+ "separation": {
+  "lateral_nm": 3,
+  "vertical_ft": 1000
+ },
+ "corridors": [
+  {
+   "name": "ALPHA",
+   "path": [
+    [
+     28.58,
+     16.5
+    ],
+    [
+     -28.58,
+     -16.5
+    ]
+   ],
+   "width_nm": 22,
+   "entry": "NORTHEAST",
+   "exit": "SOUTHWEST"
+  }
+ ],
+ "traffic": [
+  {
+   "callsign": "AAL5",
+   "type": "B739",
+   "fl": 290,
+   "exitFl": 280,
+   "speed": 285,
+   "corridor": 0,
+   "dir": 1,
+   "t": 0,
+   "x": -4.5,
+   "y": 5.08,
+   "hdg": 240,
+   "off": 6.65,
+   "s0": 34.36,
+   "role": "background"
+  },
+  {
+   "callsign": "AAL29",
+   "type": "B738",
+   "fl": 290,
+   "exitFl": 270,
+   "speed": 270,
+   "corridor": 0,
+   "dir": 1,
+   "t": 0,
+   "x": 10.18,
+   "y": 13.3,
+   "hdg": 240,
+   "off": 6.42,
+   "s0": 17.53,
+   "role": "background"
+  },
+  {
+   "callsign": "DAL805",
+   "type": "A321",
+   "fl": 310,
+   "exitFl": 300,
+   "speed": 280,
+   "corridor": 0,
+   "dir": -1,
+   "t": 16,
+   "x": -29.2,
+   "y": -11.43,
+   "hdg": 60,
+   "off": 4.69,
+   "s0": 2,
+   "role": "conflict:headon",
+   "event": 0
+  },
+  {
+   "callsign": "UAL965",
+   "type": "A319",
+   "fl": 310,
+   "exitFl": 310,
+   "speed": 290,
+   "corridor": 0,
+   "dir": 1,
+   "t": 95,
+   "x": 24.64,
+   "y": 19.33,
+   "hdg": 240,
+   "off": 4.42,
+   "s0": 2,
+   "role": "conflict:headon",
+   "event": 0
+  }
+ ],
+ "view": {
+  "x": 0,
+  "y": 0,
+  "range_nm": 38
+ },
+ "briefing": "A straight corridor from the north-east to the south-west, 4 aircraft in both directions. Keep everything inside the walls, keep 1,000 ft or 3 NM between any two aircraft, and hand each one off at the exit flight level shown on its label. Press “Ask the assessor” whenever you want a prompt — that is what Exercise 1 is for.",
+ "seed": 12,
+ "variant": "21",
+ "solution": [
+  [
+   15,
+   "American five, descend to flight level two eight zero"
+  ],
+  [
+   21,
+   "American two nine, descend to flight level two seven zero"
+  ],
+  [
+   31,
+   "Delta eight zero five, descend to flight level three zero zero"
+  ]
+ ],
+ "stats": {
+  "conflicts": 1,
+  "traps": 0,
+  "level_changes": 3,
+  "peak": 4,
+  "solver": {
+   "losses": 0,
+   "handled": 4,
+   "correct": 4,
+   "excursions": 0,
+   "faults": 0,
+   "score": 400,
+   "closest": 16.83,
+   "t": 585
+  }
+ }
+}

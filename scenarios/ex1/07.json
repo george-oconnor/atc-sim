@@ -1,0 +1,143 @@
+{
+ "id": "ex1",
+ "order": 1,
+ "exercise": 1,
+ "name": "Exercise 1 — Familiarisation",
+ "difficulty": "Easy",
+ "duration_min": 16,
+ "summary": "A straight corridor and four to six aircraft. Learn the scan, the label and the three instructions.",
+ "separation": {
+  "lateral_nm": 3,
+  "vertical_ft": 1000
+ },
+ "corridors": [
+  {
+   "name": "ALPHA",
+   "path": [
+    [
+     13.1,
+     28.1
+    ],
+    [
+     -13.1,
+     -28.1
+    ]
+   ],
+   "width_nm": 22,
+   "entry": "NORTHEAST",
+   "exit": "SOUTHWEST"
+  }
+ ],
+ "traffic": [
+  {
+   "callsign": "DAL21",
+   "type": "A319",
+   "fl": 300,
+   "exitFl": 310,
+   "speed": 305,
+   "corridor": 0,
+   "dir": 1,
+   "t": 0,
+   "x": 15.76,
+   "y": 21.06,
+   "hdg": 205,
+   "off": -5.38,
+   "s0": 5.25,
+   "role": "trap:headon",
+   "event": 0
+  },
+  {
+   "callsign": "DAL88",
+   "type": "B752",
+   "fl": 310,
+   "exitFl": 310,
+   "speed": 270,
+   "corridor": 0,
+   "dir": -1,
+   "t": 52,
+   "x": -7.01,
+   "y": -28.73,
+   "hdg": 25,
+   "off": -5.79,
+   "s0": 2,
+   "role": "trap:headon",
+   "event": 0
+  },
+  {
+   "callsign": "UAL587",
+   "type": "A20N",
+   "fl": 220,
+   "exitFl": 200,
+   "speed": 300,
+   "corridor": 0,
+   "dir": -1,
+   "t": 96,
+   "x": -14.47,
+   "y": -25.25,
+   "hdg": 25,
+   "off": 2.45,
+   "s0": 2,
+   "role": "conflict:headon",
+   "event": 1
+  },
+  {
+   "callsign": "UAL900",
+   "type": "A320",
+   "fl": 220,
+   "exitFl": 220,
+   "speed": 310,
+   "corridor": 0,
+   "dir": 1,
+   "t": 147,
+   "x": 9.8,
+   "y": 27.43,
+   "hdg": 205,
+   "off": 2.71,
+   "s0": 2,
+   "role": "conflict:headon",
+   "event": 1
+  }
+ ],
+ "view": {
+  "x": 0,
+  "y": 0,
+  "range_nm": 36
+ },
+ "briefing": "A straight corridor from the north-east to the south-west, 4 aircraft in both directions. Keep everything inside the walls, keep 1,000 ft or 3 NM between any two aircraft, and hand each one off at the exit flight level shown on its label. Press “Ask the assessor” whenever you want a prompt — that is what Exercise 1 is for.",
+ "seed": 10,
+ "variant": "07",
+ "solution": [
+  [
+   15,
+   "Delta two one, climb to flight level three one zero"
+  ],
+  [
+   52,
+   "Delta two one, climb to flight level three two zero"
+  ],
+  [
+   111,
+   "United five eight seven, descend to flight level two zero zero"
+  ],
+  [
+   249,
+   "Delta two one, descend to flight level three one zero"
+  ]
+ ],
+ "stats": {
+  "conflicts": 1,
+  "traps": 1,
+  "level_changes": 2,
+  "peak": 4,
+  "solver": {
+   "losses": 0,
+   "handled": 4,
+   "correct": 4,
+   "excursions": 0,
+   "faults": 0,
+   "score": 400,
+   "closest": 4.02,
+   "t": 630
+  }
+ }
+}

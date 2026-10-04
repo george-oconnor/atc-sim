@@ -1,0 +1,348 @@
+{
+ "id": "ex3",
+ "order": 3,
+ "exercise": 3,
+ "name": "Exercise 3 — The crossing",
+ "difficulty": "Hard",
+ "duration_min": 21,
+ "summary": "Two corridors cross. Eleven to fourteen aircraft, all heading for the same piece of sky.",
+ "separation": {
+  "lateral_nm": 3,
+  "vertical_ft": 1000
+ },
+ "corridors": [
+  {
+   "name": "ALPHA",
+   "path": [
+    [
+     -10.89,
+     -26.74
+    ],
+    [
+     20.11,
+     26.96
+    ]
+   ],
+   "width_nm": 22,
+   "entry": "SOUTHWEST",
+   "exit": "NORTHEAST"
+  },
+  {
+   "name": "BRAVO",
+   "path": [
+    [
+     24.52,
+     -24.03
+    ],
+    [
+     -24.51,
+     17.11
+    ]
+   ],
+   "angle": 80,
+   "width_nm": 22,
+   "entry": "SOUTHEAST",
+   "exit": "NORTHWEST"
+  }
+ ],
+ "traffic": [
+  {
+   "callsign": "UAL754",
+   "type": "E175",
+   "fl": 220,
+   "exitFl": 240,
+   "speed": 265,
+   "corridor": 0,
+   "dir": -1,
+   "t": 0,
+   "x": 10.05,
+   "y": 18.74,
+   "hdg": 210,
+   "off": -4.61,
+   "s0": 12.15,
+   "role": "background"
+  },
+  {
+   "callsign": "AAL88",
+   "type": "B739",
+   "fl": 280,
+   "exitFl": 270,
+   "speed": 305,
+   "corridor": 1,
+   "dir": -1,
+   "t": 89,
+   "x": -22.79,
+   "y": 16.05,
+   "hdg": 130,
+   "off": 0.29,
+   "s0": 2,
+   "role": "conflict:cross",
+   "event": 3
+  },
+  {
+   "callsign": "AAL547",
+   "type": "B752",
+   "fl": 280,
+   "exitFl": 280,
+   "speed": 265,
+   "corridor": 0,
+   "dir": 1,
+   "t": 110,
+   "x": -11.38,
+   "y": -24.15,
+   "hdg": 30,
+   "off": -1.72,
+   "s0": 2,
+   "role": "conflict:cross",
+   "event": 3
+  },
+  {
+   "callsign": "UAL8",
+   "type": "B739",
+   "fl": 270,
+   "exitFl": 260,
+   "speed": 315,
+   "corridor": 1,
+   "dir": -1,
+   "t": 125,
+   "x": -21.12,
+   "y": 18.03,
+   "hdg": 130,
+   "off": 2.88,
+   "s0": 2,
+   "role": "conflict:cross",
+   "event": 4
+  },
+  {
+   "callsign": "UAL5",
+   "type": "A20N",
+   "fl": 270,
+   "exitFl": 240,
+   "speed": 290,
+   "corridor": 0,
+   "dir": 1,
+   "t": 170,
+   "x": -8.07,
+   "y": -26.06,
+   "hdg": 30,
+   "off": 2.1,
+   "s0": 2,
+   "role": "conflict:cross",
+   "event": 4
+  },
+  {
+   "callsign": "UAL3",
+   "type": "B752",
+   "fl": 230,
+   "exitFl": 230,
+   "speed": 270,
+   "corridor": 1,
+   "dir": -1,
+   "t": 187,
+   "x": -24.53,
+   "y": 13.97,
+   "hdg": 130,
+   "off": -2.42,
+   "s0": 2,
+   "role": "conflict:cross",
+   "event": 2
+  },
+  {
+   "callsign": "AAL98",
+   "type": "B738",
+   "fl": 320,
+   "exitFl": 320,
+   "speed": 290,
+   "corridor": 1,
+   "dir": -1,
+   "t": 279,
+   "x": -22.69,
+   "y": 16.17,
+   "hdg": 130,
+   "off": 0.45,
+   "s0": 2,
+   "role": "conflict:cross",
+   "event": 5
+  },
+  {
+   "callsign": "AAL50",
+   "type": "B763",
+   "fl": 230,
+   "exitFl": 230,
+   "speed": 315,
+   "corridor": 0,
+   "dir": 1,
+   "t": 289,
+   "x": -12.3,
+   "y": -23.62,
+   "hdg": 30,
+   "off": -2.78,
+   "s0": 2,
+   "role": "conflict:cross",
+   "event": 2
+  },
+  {
+   "callsign": "UAL960",
+   "type": "E175",
+   "fl": 320,
+   "exitFl": 320,
+   "speed": 270,
+   "corridor": 0,
+   "dir": 1,
+   "t": 332,
+   "x": -9.59,
+   "y": -25.18,
+   "hdg": 30,
+   "off": 0.34,
+   "s0": 2,
+   "role": "conflict:cross",
+   "event": 5
+  },
+  {
+   "callsign": "AAL92",
+   "type": "B752",
+   "fl": 320,
+   "exitFl": 330,
+   "speed": 300,
+   "corridor": 1,
+   "dir": -1,
+   "t": 593,
+   "x": -21.9,
+   "y": 17.11,
+   "hdg": 130,
+   "off": 1.68,
+   "s0": 2,
+   "role": "conflict:cross",
+   "event": 0
+  },
+  {
+   "callsign": "UAL11",
+   "type": "B752",
+   "fl": 320,
+   "exitFl": 320,
+   "speed": 320,
+   "corridor": 0,
+   "dir": 1,
+   "t": 639,
+   "x": -11.84,
+   "y": -23.88,
+   "hdg": 30,
+   "off": -2.26,
+   "s0": 2,
+   "role": "conflict:cross",
+   "event": 0
+  },
+  {
+   "callsign": "AAL16",
+   "type": "A320",
+   "fl": 250,
+   "exitFl": 250,
+   "speed": 305,
+   "corridor": 1,
+   "dir": -1,
+   "t": 692,
+   "x": -21.51,
+   "y": 17.58,
+   "hdg": 130,
+   "off": 2.29,
+   "s0": 2,
+   "role": "conflict:cross",
+   "event": 1
+  },
+  {
+   "callsign": "AAL57",
+   "type": "A321",
+   "fl": 250,
+   "exitFl": 250,
+   "speed": 320,
+   "corridor": 0,
+   "dir": 1,
+   "t": 716,
+   "x": -12.67,
+   "y": -23.4,
+   "hdg": 30,
+   "off": -3.21,
+   "s0": 2,
+   "role": "conflict:cross",
+   "event": 1
+  }
+ ],
+ "view": {
+  "x": 0,
+  "y": 0,
+  "range_nm": 36
+ },
+ "briefing": "Two corridors cross at about 80°: ALPHA runs from the south-west to the north-east, BRAVO from the south-east to the north-west. 13 aircraft. Work out early which pairs will be over the crossing together at the same level and fix them while they are still far apart — there is no time to fix them late.",
+ "seed": 23,
+ "variant": "25",
+ "solution": [
+  [
+   15,
+   "United seven five four, climb to flight level two four zero"
+  ],
+  [
+   104,
+   "American eight eight, descend to flight level two seven zero"
+  ],
+  [
+   140,
+   "United eight, descend to flight level two six zero"
+  ],
+  [
+   170,
+   "American eight eight, climb to flight level two nine zero"
+  ],
+  [
+   185,
+   "United five, descend to flight level two four zero"
+  ],
+  [
+   191,
+   "American eight eight, descend to flight level two seven zero"
+  ],
+  [
+   289,
+   "United three, climb to flight level two four zero"
+  ],
+  [
+   332,
+   "American nine eight, climb to flight level three three zero"
+  ],
+  [
+   477,
+   "United three, descend to flight level two three zero"
+  ],
+  [
+   543,
+   "American nine eight, descend to flight level three two zero"
+  ],
+  [
+   608,
+   "American nine two, climb to flight level three three zero"
+  ],
+  [
+   716,
+   "American one six, climb to flight level two six zero"
+  ],
+  [
+   932,
+   "American one six, descend to flight level two five zero"
+  ]
+ ],
+ "stats": {
+  "conflicts": 6,
+  "traps": 0,
+  "level_changes": 5,
+  "peak": 9,
+  "solver": {
+   "losses": 0,
+   "handled": 13,
+   "correct": 13,
+   "excursions": 0,
+   "faults": 0,
+   "score": 1300,
+   "closest": 4.16,
+   "t": 1177
+  }
+ }
+}

@@ -1,0 +1,344 @@
+{
+ "id": "ex3",
+ "order": 3,
+ "exercise": 3,
+ "name": "Exercise 3 — The crossing",
+ "difficulty": "Hard",
+ "duration_min": 21,
+ "summary": "Two corridors cross. Eleven to fourteen aircraft, all heading for the same piece of sky.",
+ "separation": {
+  "lateral_nm": 3,
+  "vertical_ft": 1000
+ },
+ "corridors": [
+  {
+   "name": "ALPHA",
+   "path": [
+    [
+     -29.5,
+     -5.15
+    ],
+    [
+     29.5,
+     -5.15
+    ]
+   ],
+   "width_nm": 22,
+   "entry": "WEST",
+   "exit": "EAST"
+  },
+  {
+   "name": "BRAVO",
+   "path": [
+    [
+     -0.41,
+     -28.07
+    ],
+    [
+     9.49,
+     28.07
+    ]
+   ],
+   "angle": 80,
+   "width_nm": 22,
+   "entry": "SOUTH",
+   "exit": "NORTH"
+  }
+ ],
+ "traffic": [
+  {
+   "callsign": "DAL895",
+   "type": "A319",
+   "fl": 220,
+   "exitFl": 250,
+   "speed": 260,
+   "corridor": 1,
+   "dir": -1,
+   "t": 0,
+   "x": 8.24,
+   "y": 25.84,
+   "hdg": 190,
+   "off": -0.85,
+   "s0": 2.42,
+   "role": "conflict:cross",
+   "event": 2
+  },
+  {
+   "callsign": "DAL3",
+   "type": "A321",
+   "fl": 230,
+   "exitFl": 230,
+   "speed": 305,
+   "corridor": 1,
+   "dir": -1,
+   "t": 0,
+   "x": -2.17,
+   "y": 1.23,
+   "hdg": 190,
+   "off": -6.82,
+   "s0": 28.46,
+   "role": "background"
+  },
+  {
+   "callsign": "AAL1",
+   "type": "A21N",
+   "fl": 220,
+   "exitFl": 220,
+   "speed": 280,
+   "corridor": 0,
+   "dir": -1,
+   "t": 54,
+   "x": 27.5,
+   "y": -1.98,
+   "hdg": 270,
+   "off": -3.17,
+   "s0": 2,
+   "role": "conflict:cross",
+   "event": 2
+  },
+  {
+   "callsign": "AAL21",
+   "type": "A20N",
+   "fl": 210,
+   "exitFl": 210,
+   "speed": 320,
+   "corridor": 1,
+   "dir": -1,
+   "t": 89,
+   "x": 6.8,
+   "y": 26.51,
+   "hdg": 190,
+   "off": -2.38,
+   "s0": 2,
+   "role": "conflict:cross",
+   "event": 3
+  },
+  {
+   "callsign": "AAL503",
+   "type": "B738",
+   "fl": 210,
+   "exitFl": 220,
+   "speed": 305,
+   "corridor": 0,
+   "dir": -1,
+   "t": 124,
+   "x": 27.5,
+   "y": -5.36,
+   "hdg": 270,
+   "off": 0.21,
+   "s0": 2,
+   "role": "conflict:cross",
+   "event": 3
+  },
+  {
+   "callsign": "DAL521",
+   "type": "A319",
+   "fl": 310,
+   "exitFl": 290,
+   "speed": 285,
+   "corridor": 0,
+   "dir": -1,
+   "t": 307,
+   "x": 27.5,
+   "y": -6.45,
+   "hdg": 270,
+   "off": 1.3,
+   "s0": 2,
+   "role": "trap:cross",
+   "event": 5
+  },
+  {
+   "callsign": "UAL38",
+   "type": "A321",
+   "fl": 290,
+   "exitFl": 290,
+   "speed": 260,
+   "corridor": 1,
+   "dir": 1,
+   "t": 327,
+   "x": -1.3,
+   "y": -25.88,
+   "hdg": 10,
+   "off": -1.26,
+   "s0": 2,
+   "role": "trap:cross",
+   "event": 5
+  },
+  {
+   "callsign": "UAL417",
+   "type": "A320",
+   "fl": 300,
+   "exitFl": 300,
+   "speed": 285,
+   "corridor": 1,
+   "dir": -1,
+   "t": 351,
+   "x": 8.38,
+   "y": 26.23,
+   "hdg": 190,
+   "off": -0.77,
+   "s0": 2,
+   "role": "conflict:cross",
+   "event": 0
+  },
+  {
+   "callsign": "DAL90",
+   "type": "B38M",
+   "fl": 300,
+   "exitFl": 300,
+   "speed": 305,
+   "corridor": 0,
+   "dir": -1,
+   "t": 424,
+   "x": 27.5,
+   "y": -5.78,
+   "hdg": 270,
+   "off": 0.63,
+   "s0": 2,
+   "role": "conflict:cross",
+   "event": 0
+  },
+  {
+   "callsign": "AAL91",
+   "type": "A319",
+   "fl": 260,
+   "exitFl": 220,
+   "speed": 295,
+   "corridor": 1,
+   "dir": -1,
+   "t": 432,
+   "x": 10.99,
+   "y": 25.77,
+   "hdg": 190,
+   "off": 1.87,
+   "s0": 2,
+   "role": "conflict:cross",
+   "event": 4
+  },
+  {
+   "callsign": "AAL98",
+   "type": "E175",
+   "fl": 260,
+   "exitFl": 260,
+   "speed": 290,
+   "corridor": 0,
+   "dir": 1,
+   "t": 438,
+   "x": -27.5,
+   "y": -7.16,
+   "hdg": 90,
+   "off": 2.01,
+   "s0": 2,
+   "role": "conflict:cross",
+   "event": 4
+  },
+  {
+   "callsign": "AAL776",
+   "type": "A319",
+   "fl": 320,
+   "exitFl": 320,
+   "speed": 280,
+   "corridor": 1,
+   "dir": -1,
+   "t": 623,
+   "x": 11.05,
+   "y": 25.76,
+   "hdg": 190,
+   "off": 1.94,
+   "s0": 2,
+   "role": "conflict:cross",
+   "event": 1
+  },
+  {
+   "callsign": "AAL79",
+   "type": "B738",
+   "fl": 320,
+   "exitFl": 320,
+   "speed": 265,
+   "corridor": 0,
+   "dir": -1,
+   "t": 669,
+   "x": 27.5,
+   "y": -2.16,
+   "hdg": 270,
+   "off": -2.99,
+   "s0": 2,
+   "role": "conflict:cross",
+   "event": 1
+  }
+ ],
+ "view": {
+  "x": 0,
+  "y": 0,
+  "range_nm": 33
+ },
+ "briefing": "Two corridors cross at about 80°: ALPHA runs from the west to the east, BRAVO from the south to the north. 13 aircraft. Work out early which pairs will be over the crossing together at the same level and fix them while they are still far apart — there is no time to fix them late.",
+ "seed": 4,
+ "variant": "04",
+ "solution": [
+  [
+   15,
+   "Delta eight nine five, climb to flight level two five zero"
+  ],
+  [
+   135,
+   "American two one, descend to flight level two zero zero"
+  ],
+  [
+   141,
+   "American five zero three, climb to flight level two two zero"
+  ],
+  [
+   147,
+   "American two one, climb to flight level two one zero"
+  ],
+  [
+   322,
+   "Delta five two one, descend to flight level two nine zero"
+  ],
+  [
+   328,
+   "Delta five two one, descend to flight level three zero zero"
+  ],
+  [
+   424,
+   "United four one seven, climb to flight level three one zero"
+  ],
+  [
+   447,
+   "American nine one, descend to flight level two two zero"
+  ],
+  [
+   524,
+   "Delta five two one, descend to flight level two nine zero"
+  ],
+  [
+   629,
+   "United four one seven, descend to flight level three zero zero"
+  ],
+  [
+   669,
+   "American seven seven six, climb to flight level three three zero"
+  ],
+  [
+   869,
+   "American seven seven six, descend to flight level three two zero"
+  ]
+ ],
+ "stats": {
+  "conflicts": 5,
+  "traps": 1,
+  "level_changes": 4,
+  "peak": 10,
+  "solver": {
+   "losses": 0,
+   "handled": 13,
+   "correct": 13,
+   "excursions": 0,
+   "faults": 0,
+   "score": 1300,
+   "closest": 4.15,
+   "t": 1141
+  }
+ }
+}

@@ -1,0 +1,161 @@
+{
+ "id": "ex1",
+ "order": 1,
+ "exercise": 1,
+ "name": "Exercise 1 — Familiarisation",
+ "difficulty": "Easy",
+ "duration_min": 16,
+ "summary": "A straight corridor and four to six aircraft. Learn the scan, the label and the three instructions.",
+ "separation": {
+  "lateral_nm": 3,
+  "vertical_ft": 1000
+ },
+ "corridors": [
+  {
+   "name": "ALPHA",
+   "path": [
+    [
+     22.98,
+     -22.98
+    ],
+    [
+     -22.98,
+     22.98
+    ]
+   ],
+   "width_nm": 22,
+   "entry": "SOUTHEAST",
+   "exit": "NORTHWEST"
+  }
+ ],
+ "traffic": [
+  {
+   "callsign": "DAL6",
+   "type": "A319",
+   "fl": 290,
+   "exitFl": 310,
+   "speed": 305,
+   "corridor": 0,
+   "dir": -1,
+   "t": 0,
+   "x": -2.35,
+   "y": 8.55,
+   "hdg": 135,
+   "off": 4.38,
+   "s0": 24.79,
+   "role": "background"
+  },
+  {
+   "callsign": "UAL42",
+   "type": "B763",
+   "fl": 260,
+   "exitFl": 230,
+   "speed": 310,
+   "corridor": 0,
+   "dir": -1,
+   "t": 63,
+   "x": -19.02,
+   "y": 24.11,
+   "hdg": 135,
+   "off": 3.59,
+   "s0": 2,
+   "role": "conflict:headon",
+   "event": 0
+  },
+  {
+   "callsign": "AAL305",
+   "type": "B738",
+   "fl": 260,
+   "exitFl": 260,
+   "speed": 275,
+   "corridor": 0,
+   "dir": 1,
+   "t": 174,
+   "x": 24.95,
+   "y": -18.18,
+   "hdg": 315,
+   "off": 4.79,
+   "s0": 2,
+   "role": "conflict:headon",
+   "event": 0
+  },
+  {
+   "callsign": "DAL48",
+   "type": "B738",
+   "fl": 270,
+   "exitFl": 280,
+   "speed": 260,
+   "corridor": 0,
+   "dir": -1,
+   "t": 248,
+   "x": -18.07,
+   "y": 25.06,
+   "hdg": 135,
+   "off": 4.94,
+   "s0": 2,
+   "role": "background"
+  },
+  {
+   "callsign": "UAL739",
+   "type": "B739",
+   "fl": 280,
+   "exitFl": 280,
+   "speed": 275,
+   "corridor": 0,
+   "dir": 1,
+   "t": 345,
+   "x": 22.66,
+   "y": -20.47,
+   "hdg": 315,
+   "off": 1.54,
+   "s0": 2,
+   "role": "background"
+  }
+ ],
+ "view": {
+  "x": 0,
+  "y": 0,
+  "range_nm": 34
+ },
+ "briefing": "A straight corridor from the south-east to the north-west, 5 aircraft in both directions. Keep everything inside the walls, keep 1,000 ft or 3 NM between any two aircraft, and hand each one off at the exit flight level shown on its label. Press “Ask the assessor” whenever you want a prompt — that is what Exercise 1 is for.",
+ "seed": 49,
+ "variant": "23",
+ "solution": [
+  [
+   15,
+   "Delta six, climb to flight level three one zero"
+  ],
+  [
+   78,
+   "United four two, descend to flight level two three zero"
+  ],
+  [
+   263,
+   "Delta four eight, climb to flight level two eight zero"
+  ],
+  [
+   368,
+   "Delta four eight, climb to flight level two nine zero"
+  ],
+  [
+   569,
+   "Delta four eight, descend to flight level two eight zero"
+  ]
+ ],
+ "stats": {
+  "conflicts": 1,
+  "traps": 0,
+  "level_changes": 3,
+  "peak": 4,
+  "solver": {
+   "losses": 0,
+   "handled": 5,
+   "correct": 5,
+   "excursions": 0,
+   "faults": 0,
+   "score": 500,
+   "closest": 4.25,
+   "t": 873
+  }
+ }
+}

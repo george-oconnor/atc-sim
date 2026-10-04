@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Register{% endblock %}
+{% block body %}
+<div class="page narrow">
+  {% include "_account.html" %}
+  <header class="pagehead">
+    <h1>Register</h1>
+    <p>An account keeps your progress across devices and lets you report
+      speech-recognition problems. You can still practise without one.</p>
+    <nav><a href="{{ url_for('index') }}">&larr; Exercises</a></nav>
+  </header>
+  <form method="post" class="form">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <input type="hidden" name="next" value="{{ next }}">
+    {% if error %}<p class="flash err">{{ error }}</p>{% endif %}
+    <label>Email address <input name="email" type="email" value="{{ email }}"
+      autocomplete="username" autocapitalize="none" spellcheck="false" maxlength="254"
+      required autofocus></label>
+    <label>Password <input name="password" type="password" autocomplete="new-password"
+      minlength="8" required></label>
+    <label>Password again <input name="password2" type="password" autocomplete="new-password"
+      minlength="8" required></label>
+    <button class="btn" type="submit">Create account</button>
+    <p class="formnote">Runs you have already flown in this browser move into the new
+      account. Nothing is sent to the address yet, so there is no emailed password
+      reset &mdash; if you forget it, ask the site admin.</p>
+  </form>
+</div>
+{% endblock %}

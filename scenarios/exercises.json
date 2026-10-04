@@ -1,0 +1,29 @@
+{
+  "ex1": {
+    "order": 1, "exercise": 1,
+    "name": "Exercise 1 — Familiarisation",
+    "difficulty": "Easy", "duration_min": 16,
+    "summary": "A straight corridor and four to six aircraft. Learn the scan, the label and the three instructions.",
+    "layout": "straight",
+    "aircraft": [4, 6], "conflicts": [1, 2], "traps": [0, 1], "level_changes": [2, 3],
+    "starters": [1, 2], "react_s": 150, "conflict_gap_s": 120
+  },
+  "ex2": {
+    "order": 2, "exercise": 2,
+    "name": "Exercise 2 — The bend",
+    "difficulty": "Medium", "duration_min": 19,
+    "summary": "The corridor turns. Eight to ten aircraft, and nothing turns unless you tell it to.",
+    "layout": "bend",
+    "aircraft": [8, 10], "conflicts": [3, 4], "traps": [1, 1], "level_changes": [3, 5],
+    "starters": [2, 3], "react_s": 120, "conflict_gap_s": 75
+  },
+  "ex3": {
+    "order": 3, "exercise": 3,
+    "name": "Exercise 3 — The crossing",
+    "difficulty": "Hard", "duration_min": 21,
+    "summary": "Two corridors cross. Eleven to fourteen aircraft, all heading for the same piece of sky.",
+    "layout": "cross",
+    "aircraft": [11, 14], "conflicts": [4, 6], "traps": [1, 2], "level_changes": [4, 6],
+    "starters": [2, 3], "react_s": 120, "conflict_gap_s": 50
+  }
+}

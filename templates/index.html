@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}ATC Practice{% endblock %}
+{% block body %}
+<div class="page">
+  {% include "_account.html" %}
+  <header class="pagehead">
+    <h1>Assessment Centre practice</h1>
+    <p>Three corridor exercises, built to the preparation material: 1,000 ft or
+       3 NM separation, standard phraseology, and an exit flight level for every
+       aircraft.</p>
+    <nav><a href="{{ url_for('mic_test') }}">Microphone test</a>
+      &nbsp;&middot;&nbsp;
+      <a href="{{ url_for('phraseology') }}">Phraseology drill</a>
+      &nbsp;&middot;&nbsp;
+      <a href="{{ url_for('progress') }}">Progress</a></nav>
+  </header>
+
+  <div class="cards">
+    <a class="card" href="{{ url_for('tutorial') }}">
+      <div class="cardtop">
+        <span class="diff diff-tutorial">Start here</span>
+        <span class="mins">5 min read</span>
+      </div>
+      <h2>How to read the radar</h2>
+      <p>What all the numbers mean, and what you're actually meant to do.
+        Read this before Exercise 1.</p>
+    </a>
+  {% for s in exercises %}
+    <a class="card" href="{{ url_for('sim', ex_id=s.id) }}">
+      <div class="cardtop">
+        <span class="diff diff-{{ s.difficulty|lower }}">{{ s.difficulty }}</span>
+        <span class="mins">{{ s.duration_min }} min</span>
+      </div>
+      <h2>{{ s.name }}</h2>
+      <p>{{ s.summary }}</p>
+      <div class="cardfoot">
+        <span>{{ s.aircraft[0] }}&ndash;{{ s.aircraft[1] }} aircraft &middot;
+          {{ s.variants|length }} scenarios</span>
+        {% if best.get(s.id) is not none %}<span class="best">best {{ best[s.id] }}</span>{% endif %}
+      </div>
+    </a>
+  {% endfor %}
+  </div>
+
+  <p class="unlimited">Each exercise picks one of its vetted scenarios at random,
+    steering clear of the ones you flew recently. Know them all?
+    <b>Unlimited random</b> builds a brand-new one in your browser every time:
+    {% for s in exercises %}<a href="{{ url_for('sim', ex_id=s.id, random=1) }}">Exercise
+    {{ s.exercise }}</a>{{ " · " if not loop.last }}{% endfor %}</p>
+</div>
+{% endblock %}

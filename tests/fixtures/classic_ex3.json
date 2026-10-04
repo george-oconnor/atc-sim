@@ -1,0 +1,211 @@
+{
+  "id": "ex3",
+  "order": 3,
+  "exercise": 3,
+  "name": "Exercise 3 \u2014 The crossing",
+  "difficulty": "Hard",
+  "duration_min": 21,
+  "summary": "Two corridors cross at right angles. Twelve aircraft, all heading for the same square of sky.",
+  "briefing": "Two corridors cross in the middle of your sector. Twelve aircraft. Work out early which pairs will be over the crossing together at the same level and fix them while they are still far apart \u2014 there is no time to fix them late.",
+  "separation": {
+    "lateral_nm": 3,
+    "vertical_ft": 1000
+  },
+  "view": {
+    "x": 0,
+    "y": 0,
+    "range_nm": 36
+  },
+  "corridors": [
+    {
+      "name": "ALPHA",
+      "width_nm": 22,
+      "entry": "WEST",
+      "exit": "EAST",
+      "path": [
+        [
+          -30,
+          0
+        ],
+        [
+          30,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "BRAVO",
+      "width_nm": 22,
+      "entry": "SOUTH",
+      "exit": "NORTH",
+      "path": [
+        [
+          0,
+          -30
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  ],
+  "traffic": [
+    {
+      "callsign": "AAL451",
+      "type": "B738",
+      "fl": 230,
+      "exitFl": 230,
+      "speed": 290,
+      "corridor": 0,
+      "dir": 1,
+      "t": 13,
+      "x": -28.0,
+      "y": 0.0,
+      "hdg": 90
+    },
+    {
+      "callsign": "UAL130",
+      "type": "B738",
+      "fl": 230,
+      "exitFl": 230,
+      "speed": 300,
+      "corridor": 1,
+      "dir": 1,
+      "t": 24,
+      "x": 0.0,
+      "y": -28.0,
+      "hdg": 0
+    },
+    {
+      "callsign": "DAL66",
+      "type": "B738",
+      "fl": 280,
+      "exitFl": 260,
+      "speed": 310,
+      "corridor": 0,
+      "dir": 1,
+      "t": 170,
+      "x": -28.0,
+      "y": -6.0,
+      "hdg": 90
+    },
+    {
+      "callsign": "AAL62",
+      "type": "B738",
+      "fl": 260,
+      "exitFl": 260,
+      "speed": 270,
+      "corridor": 1,
+      "dir": 1,
+      "t": 177,
+      "x": 0.0,
+      "y": -28.0,
+      "hdg": 0
+    },
+    {
+      "callsign": "DAL77",
+      "type": "B738",
+      "fl": 260,
+      "exitFl": 240,
+      "speed": 280,
+      "corridor": 0,
+      "dir": 1,
+      "t": 184,
+      "x": -28.0,
+      "y": -2.0,
+      "hdg": 90
+    },
+    {
+      "callsign": "DAL208",
+      "type": "B738",
+      "fl": 270,
+      "exitFl": 250,
+      "speed": 300,
+      "corridor": 1,
+      "dir": -1,
+      "t": 375,
+      "x": 0.0,
+      "y": 28.0,
+      "hdg": 180
+    },
+    {
+      "callsign": "UAL17",
+      "type": "B738",
+      "fl": 270,
+      "exitFl": 270,
+      "speed": 310,
+      "corridor": 0,
+      "dir": 1,
+      "t": 380,
+      "x": -28.0,
+      "y": 2.0,
+      "hdg": 90
+    },
+    {
+      "callsign": "AAL9",
+      "type": "B738",
+      "fl": 250,
+      "exitFl": 230,
+      "speed": 280,
+      "corridor": 1,
+      "dir": 1,
+      "t": 480,
+      "x": -6.0,
+      "y": -28.0,
+      "hdg": 0
+    },
+    {
+      "callsign": "AAL34",
+      "type": "B738",
+      "fl": 250,
+      "exitFl": 210,
+      "speed": 280,
+      "corridor": 0,
+      "dir": 1,
+      "t": 521,
+      "x": -28.0,
+      "y": 0.0,
+      "hdg": 90
+    },
+    {
+      "callsign": "UAL87",
+      "type": "B738",
+      "fl": 250,
+      "exitFl": 250,
+      "speed": 290,
+      "corridor": 1,
+      "dir": -1,
+      "t": 541,
+      "x": 1.0,
+      "y": 28.0,
+      "hdg": 180
+    },
+    {
+      "callsign": "UAL66",
+      "type": "B738",
+      "fl": 220,
+      "exitFl": 220,
+      "speed": 300,
+      "corridor": 0,
+      "dir": -1,
+      "t": 620,
+      "x": 28.0,
+      "y": -8.0,
+      "hdg": 270
+    },
+    {
+      "callsign": "DAL451",
+      "type": "B738",
+      "fl": 290,
+      "exitFl": 290,
+      "speed": 290,
+      "corridor": 1,
+      "dir": -1,
+      "t": 700,
+      "x": -8.0,
+      "y": 28.0,
+      "hdg": 180
+    }
+  ]
+}

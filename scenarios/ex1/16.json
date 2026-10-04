@@ -1,0 +1,137 @@
+{
+ "id": "ex1",
+ "order": 1,
+ "exercise": 1,
+ "name": "Exercise 1 — Familiarisation",
+ "difficulty": "Easy",
+ "duration_min": 16,
+ "summary": "A straight corridor and four to six aircraft. Learn the scan, the label and the three instructions.",
+ "separation": {
+  "lateral_nm": 3,
+  "vertical_ft": 1000
+ },
+ "corridors": [
+  {
+   "name": "ALPHA",
+   "path": [
+    [
+     -32.5,
+     0
+    ],
+    [
+     32.5,
+     0
+    ]
+   ],
+   "width_nm": 22,
+   "entry": "WEST",
+   "exit": "EAST"
+  }
+ ],
+ "traffic": [
+  {
+   "callsign": "UAL46",
+   "type": "B763",
+   "fl": 220,
+   "exitFl": 250,
+   "speed": 295,
+   "corridor": 0,
+   "dir": 1,
+   "t": 0,
+   "x": 0.92,
+   "y": -4.08,
+   "hdg": 90,
+   "off": 4.08,
+   "s0": 33.42,
+   "role": "background"
+  },
+  {
+   "callsign": "AAL2",
+   "type": "B738",
+   "fl": 310,
+   "exitFl": 320,
+   "speed": 265,
+   "corridor": 0,
+   "dir": -1,
+   "t": 119,
+   "x": 30.5,
+   "y": 4.68,
+   "hdg": 270,
+   "off": -4.68,
+   "s0": 2,
+   "role": "conflict:headon",
+   "event": 0
+  },
+  {
+   "callsign": "DAL294",
+   "type": "B38M",
+   "fl": 310,
+   "exitFl": 310,
+   "speed": 270,
+   "corridor": 0,
+   "dir": 1,
+   "t": 192,
+   "x": -30.5,
+   "y": 5.05,
+   "hdg": 90,
+   "off": -5.05,
+   "s0": 2,
+   "role": "conflict:headon",
+   "event": 0
+  },
+  {
+   "callsign": "AAL64",
+   "type": "E175",
+   "fl": 300,
+   "exitFl": 280,
+   "speed": 310,
+   "corridor": 0,
+   "dir": 1,
+   "t": 425,
+   "x": -30.5,
+   "y": -5.95,
+   "hdg": 90,
+   "off": 5.95,
+   "s0": 2,
+   "role": "background"
+  }
+ ],
+ "view": {
+  "x": 0,
+  "y": 0,
+  "range_nm": 36
+ },
+ "briefing": "A straight corridor from the west to the east, 4 aircraft in both directions. Keep everything inside the walls, keep 1,000 ft or 3 NM between any two aircraft, and hand each one off at the exit flight level shown on its label. Press “Ask the assessor” whenever you want a prompt — that is what Exercise 1 is for.",
+ "seed": 6,
+ "variant": "16",
+ "solution": [
+  [
+   15,
+   "United four six, climb to flight level two five zero"
+  ],
+  [
+   134,
+   "American two, climb to flight level three two zero"
+  ],
+  [
+   440,
+   "American six four, descend to flight level two eight zero"
+  ]
+ ],
+ "stats": {
+  "conflicts": 1,
+  "traps": 0,
+  "level_changes": 3,
+  "peak": 3,
+  "solver": {
+   "losses": 0,
+   "handled": 4,
+   "correct": 4,
+   "excursions": 0,
+   "faults": 0,
+   "score": 400,
+   "closest": null,
+   "t": 892
+  }
+ }
+}

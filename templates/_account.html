@@ -1,0 +1,18 @@
+{# Who you are, top right of every ordinary page. #}
+<div class="acctbar">
+{% if me %}
+  <a href="{{ url_for('account') }}" title="Your account">{{ me.email }}</a>
+  {% if is_reviewer %}<a href="{{ url_for('admin_reports') }}">Reports</a>{% endif %}
+  {% if is_admin %}<a href="{{ url_for('admin_users') }}">Users</a>{% endif %}
+  <form method="post" action="{{ url_for('logout') }}" class="inline">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <button type="submit" class="linkbtn">Log out</button>
+  </form>
+{% else %}
+  <a href="{{ url_for('login', next=request.path) }}">Log in</a>
+  <a href="{{ url_for('register', next=request.path) }}">Register</a>
+{% endif %}
+</div>
+{% with msgs = get_flashed_messages(with_categories=true) %}
+{% for cat, m in msgs %}<p class="flash {{ cat }}">{{ m }}</p>{% endfor %}
+{% endwith %}

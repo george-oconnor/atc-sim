@@ -1,0 +1,137 @@
+{
+ "id": "ex1",
+ "order": 1,
+ "exercise": 1,
+ "name": "Exercise 1 — Familiarisation",
+ "difficulty": "Easy",
+ "duration_min": 16,
+ "summary": "A straight corridor and four to six aircraft. Learn the scan, the label and the three instructions.",
+ "separation": {
+  "lateral_nm": 3,
+  "vertical_ft": 1000
+ },
+ "corridors": [
+  {
+   "name": "ALPHA",
+   "path": [
+    [
+     27.85,
+     -19.5
+    ],
+    [
+     -27.85,
+     19.5
+    ]
+   ],
+   "width_nm": 22,
+   "entry": "SOUTHEAST",
+   "exit": "NORTHWEST"
+  }
+ ],
+ "traffic": [
+  {
+   "callsign": "AAL2",
+   "type": "A320",
+   "fl": 210,
+   "exitFl": 220,
+   "speed": 270,
+   "corridor": 0,
+   "dir": -1,
+   "t": 0,
+   "x": -11.7,
+   "y": 5.46,
+   "hdg": 125,
+   "off": -2.24,
+   "s0": 21.28,
+   "role": "conflict:headon",
+   "event": 0
+  },
+  {
+   "callsign": "UAL14",
+   "type": "B763",
+   "fl": 210,
+   "exitFl": 200,
+   "speed": 310,
+   "corridor": 0,
+   "dir": 1,
+   "t": 3,
+   "x": 24.65,
+   "y": -20.58,
+   "hdg": 305,
+   "off": -2.72,
+   "s0": 2,
+   "role": "conflict:headon",
+   "event": 0
+  },
+  {
+   "callsign": "AAL373",
+   "type": "A321",
+   "fl": 230,
+   "exitFl": 230,
+   "speed": 285,
+   "corridor": 0,
+   "dir": -1,
+   "t": 119,
+   "x": -30.09,
+   "y": 12.81,
+   "hdg": 125,
+   "off": -6.77,
+   "s0": 2,
+   "role": "background"
+  },
+  {
+   "callsign": "UAL44",
+   "type": "B763",
+   "fl": 270,
+   "exitFl": 280,
+   "speed": 320,
+   "corridor": 0,
+   "dir": 1,
+   "t": 129,
+   "x": 26.19,
+   "y": -18.39,
+   "hdg": 305,
+   "off": -0.04,
+   "s0": 2,
+   "role": "background"
+  }
+ ],
+ "view": {
+  "x": 0,
+  "y": 0,
+  "range_nm": 38
+ },
+ "briefing": "A straight corridor from the south-east to the north-west, 4 aircraft in both directions. Keep everything inside the walls, keep 1,000 ft or 3 NM between any two aircraft, and hand each one off at the exit flight level shown on its label. Press “Ask the assessor” whenever you want a prompt — that is what Exercise 1 is for.",
+ "seed": 20,
+ "variant": "11",
+ "solution": [
+  [
+   15,
+   "American two, climb to flight level two two zero"
+  ],
+  [
+   21,
+   "United one four, descend to flight level two zero zero"
+  ],
+  [
+   144,
+   "United four four, climb to flight level two eight zero"
+  ]
+ ],
+ "stats": {
+  "conflicts": 1,
+  "traps": 0,
+  "level_changes": 3,
+  "peak": 4,
+  "solver": {
+   "losses": 0,
+   "handled": 4,
+   "correct": 4,
+   "excursions": 0,
+   "faults": 0,
+   "score": 400,
+   "closest": null,
+   "t": 689
+  }
+ }
+}

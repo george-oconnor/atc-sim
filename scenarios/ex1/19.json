@@ -1,0 +1,155 @@
+{
+ "id": "ex1",
+ "order": 1,
+ "exercise": 1,
+ "name": "Exercise 1 — Familiarisation",
+ "difficulty": "Easy",
+ "duration_min": 16,
+ "summary": "A straight corridor and four to six aircraft. Learn the scan, the label and the three instructions.",
+ "separation": {
+  "lateral_nm": 3,
+  "vertical_ft": 1000
+ },
+ "corridors": [
+  {
+   "name": "ALPHA",
+   "path": [
+    [
+     2.88,
+     32.87
+    ],
+    [
+     -2.88,
+     -32.87
+    ]
+   ],
+   "width_nm": 22,
+   "entry": "NORTH",
+   "exit": "SOUTH"
+  }
+ ],
+ "traffic": [
+  {
+   "callsign": "UAL463",
+   "type": "B738",
+   "fl": 250,
+   "exitFl": 210,
+   "speed": 310,
+   "corridor": 0,
+   "dir": -1,
+   "t": 0,
+   "x": 2.51,
+   "y": -25.63,
+   "hdg": 5,
+   "off": -4.73,
+   "s0": 7.68,
+   "role": "conflict:headon",
+   "event": 1
+  },
+  {
+   "callsign": "UAL21",
+   "type": "A320",
+   "fl": 250,
+   "exitFl": 270,
+   "speed": 315,
+   "corridor": 0,
+   "dir": 1,
+   "t": 13,
+   "x": 6.8,
+   "y": 30.52,
+   "hdg": 185,
+   "off": -4.11,
+   "s0": 2,
+   "role": "conflict:headon",
+   "event": 1
+  },
+  {
+   "callsign": "AAL418",
+   "type": "B763",
+   "fl": 260,
+   "exitFl": 270,
+   "speed": 290,
+   "corridor": 0,
+   "dir": 1,
+   "t": 57,
+   "x": 6.28,
+   "y": 30.56,
+   "hdg": 185,
+   "off": -3.59,
+   "s0": 2,
+   "role": "trap:headon",
+   "event": 0
+  },
+  {
+   "callsign": "DAL964",
+   "type": "A319",
+   "fl": 270,
+   "exitFl": 270,
+   "speed": 270,
+   "corridor": 0,
+   "dir": -1,
+   "t": 178,
+   "x": 1.36,
+   "y": -31.23,
+   "hdg": 5,
+   "off": -4.08,
+   "s0": 2,
+   "role": "trap:headon",
+   "event": 0
+  }
+ ],
+ "view": {
+  "x": 0,
+  "y": 0,
+  "range_nm": 37
+ },
+ "briefing": "A straight corridor from the north to the south, 4 aircraft in both directions. Keep everything inside the walls, keep 1,000 ft or 3 NM between any two aircraft, and hand each one off at the exit flight level shown on its label. Press “Ask the assessor” whenever you want a prompt — that is what Exercise 1 is for.",
+ "seed": 16,
+ "variant": "19",
+ "solution": [
+  [
+   15,
+   "United four six three, descend to flight level two one zero"
+  ],
+  [
+   28,
+   "United two one, climb to flight level two seven zero"
+  ],
+  [
+   72,
+   "American four one eight, climb to flight level two seven zero"
+  ],
+  [
+   178,
+   "United two one, climb to flight level two eight zero"
+  ],
+  [
+   184,
+   "American four one eight, climb to flight level two eight zero"
+  ],
+  [
+   351,
+   "United two one, descend to flight level two seven zero"
+  ],
+  [
+   388,
+   "American four one eight, descend to flight level two seven zero"
+  ]
+ ],
+ "stats": {
+  "conflicts": 1,
+  "traps": 2,
+  "level_changes": 3,
+  "peak": 4,
+  "solver": {
+   "losses": 0,
+   "handled": 4,
+   "correct": 4,
+   "excursions": 0,
+   "faults": 0,
+   "score": 400,
+   "closest": 4.1,
+   "t": 732
+  }
+ }
+}

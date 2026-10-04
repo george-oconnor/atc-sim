@@ -1,0 +1,368 @@
+{
+ "id": "ex3",
+ "order": 3,
+ "exercise": 3,
+ "name": "Exercise 3 — The crossing",
+ "difficulty": "Hard",
+ "duration_min": 21,
+ "summary": "Two corridors cross. Eleven to fourteen aircraft, all heading for the same piece of sky.",
+ "separation": {
+  "lateral_nm": 3,
+  "vertical_ft": 1000
+ },
+ "corridors": [
+  {
+   "name": "ALPHA",
+   "path": [
+    [
+     21.62,
+     -16.92
+    ],
+    [
+     -26.71,
+     16.92
+    ]
+   ],
+   "width_nm": 22,
+   "entry": "SOUTHEAST",
+   "exit": "NORTHWEST"
+  },
+  {
+   "name": "BRAVO",
+   "path": [
+    [
+     -28.55,
+     -13.11
+    ],
+    [
+     28.55,
+     13.51
+    ]
+   ],
+   "angle": 120,
+   "width_nm": 22,
+   "entry": "SOUTHWEST",
+   "exit": "NORTHEAST"
+  }
+ ],
+ "traffic": [
+  {
+   "callsign": "DAL37",
+   "type": "A321",
+   "fl": 210,
+   "exitFl": 220,
+   "speed": 305,
+   "corridor": 1,
+   "dir": 1,
+   "t": 0,
+   "x": -24.56,
+   "y": -11.24,
+   "hdg": 65,
+   "off": -0.01,
+   "s0": 4.41,
+   "role": "trap:headon",
+   "event": 0
+  },
+  {
+   "callsign": "DAL713",
+   "type": "B738",
+   "fl": 220,
+   "exitFl": 220,
+   "speed": 270,
+   "corridor": 1,
+   "dir": -1,
+   "t": 0,
+   "x": 18.18,
+   "y": 8.54,
+   "hdg": 245,
+   "off": 0.12,
+   "s0": 11.5,
+   "role": "trap:headon",
+   "event": 0
+  },
+  {
+   "callsign": "DAL830",
+   "type": "A321",
+   "fl": 310,
+   "exitFl": 310,
+   "speed": 265,
+   "corridor": 1,
+   "dir": -1,
+   "t": 27,
+   "x": 26.93,
+   "y": 12.25,
+   "hdg": 245,
+   "off": 0.46,
+   "s0": 2,
+   "role": "conflict:cross",
+   "event": 5
+  },
+  {
+   "callsign": "AAL846",
+   "type": "B738",
+   "fl": 310,
+   "exitFl": 310,
+   "speed": 305,
+   "corridor": 0,
+   "dir": -1,
+   "t": 43,
+   "x": -23.83,
+   "y": 17.54,
+   "hdg": 125,
+   "off": 2.16,
+   "s0": 2,
+   "role": "conflict:cross",
+   "event": 5
+  },
+  {
+   "callsign": "DAL80",
+   "type": "B739",
+   "fl": 250,
+   "exitFl": 250,
+   "speed": 315,
+   "corridor": 1,
+   "dir": -1,
+   "t": 153,
+   "x": 27.28,
+   "y": 11.5,
+   "hdg": 245,
+   "off": 1.28,
+   "s0": 2,
+   "role": "conflict:cross",
+   "event": 3
+  },
+  {
+   "callsign": "UAL791",
+   "type": "A320",
+   "fl": 250,
+   "exitFl": 260,
+   "speed": 280,
+   "corridor": 0,
+   "dir": 1,
+   "t": 157,
+   "x": 22.12,
+   "y": -12.71,
+   "hdg": 305,
+   "off": 3.74,
+   "s0": 2,
+   "role": "conflict:cross",
+   "event": 3
+  },
+  {
+   "callsign": "UAL340",
+   "type": "B738",
+   "fl": 260,
+   "exitFl": 260,
+   "speed": 310,
+   "corridor": 0,
+   "dir": 1,
+   "t": 340,
+   "x": 23.23,
+   "y": -11.13,
+   "hdg": 305,
+   "off": 5.67,
+   "s0": 2,
+   "role": "background"
+  },
+  {
+   "callsign": "AAL45",
+   "type": "B763",
+   "fl": 240,
+   "exitFl": 220,
+   "speed": 310,
+   "corridor": 1,
+   "dir": -1,
+   "t": 383,
+   "x": 26.82,
+   "y": 12.49,
+   "hdg": 245,
+   "off": 0.19,
+   "s0": 2,
+   "role": "conflict:cross",
+   "event": 4
+  },
+  {
+   "callsign": "UAL760",
+   "type": "B763",
+   "fl": 240,
+   "exitFl": 240,
+   "speed": 280,
+   "corridor": 0,
+   "dir": -1,
+   "t": 388,
+   "x": -25.45,
+   "y": 15.23,
+   "hdg": 125,
+   "off": -0.66,
+   "s0": 2,
+   "role": "conflict:cross",
+   "event": 4
+  },
+  {
+   "callsign": "DAL2",
+   "type": "A320",
+   "fl": 270,
+   "exitFl": 270,
+   "speed": 290,
+   "corridor": 0,
+   "dir": 1,
+   "t": 420,
+   "x": 17.15,
+   "y": -19.82,
+   "hdg": 305,
+   "off": -4.94,
+   "s0": 2,
+   "role": "background"
+  },
+  {
+   "callsign": "AAL220",
+   "type": "A320",
+   "fl": 220,
+   "exitFl": 220,
+   "speed": 260,
+   "corridor": 1,
+   "dir": -1,
+   "t": 599,
+   "x": 26.25,
+   "y": 13.72,
+   "hdg": 245,
+   "off": -1.16,
+   "s0": 2,
+   "role": "conflict:cross",
+   "event": 1
+  },
+  {
+   "callsign": "AAL210",
+   "type": "B763",
+   "fl": 300,
+   "exitFl": 310,
+   "speed": 300,
+   "corridor": 0,
+   "dir": 1,
+   "t": 639,
+   "x": 19.23,
+   "y": -16.85,
+   "hdg": 305,
+   "off": -1.31,
+   "s0": 2,
+   "role": "trap:cross",
+   "event": 2
+  },
+  {
+   "callsign": "DAL180",
+   "type": "A320",
+   "fl": 310,
+   "exitFl": 310,
+   "speed": 295,
+   "corridor": 1,
+   "dir": 1,
+   "t": 651,
+   "x": -26.75,
+   "y": -12.25,
+   "hdg": 65,
+   "off": -0.02,
+   "s0": 2,
+   "role": "trap:cross",
+   "event": 2
+  },
+  {
+   "callsign": "AAL5",
+   "type": "B752",
+   "fl": 220,
+   "exitFl": 220,
+   "speed": 295,
+   "corridor": 0,
+   "dir": 1,
+   "t": 693,
+   "x": 17.76,
+   "y": -18.95,
+   "hdg": 305,
+   "off": -3.88,
+   "s0": 2,
+   "role": "conflict:cross",
+   "event": 1
+  }
+ ],
+ "view": {
+  "x": 0,
+  "y": 0,
+  "range_nm": 37
+ },
+ "briefing": "Two corridors cross at about 60°: ALPHA runs from the south-east to the north-west, BRAVO from the south-west to the north-east. 14 aircraft. Work out early which pairs will be over the crossing together at the same level and fix them while they are still far apart — there is no time to fix them late.",
+ "seed": 20,
+ "variant": "23",
+ "solution": [
+  [
+   65,
+   "Delta eight three zero, climb to flight level three two zero"
+  ],
+  [
+   168,
+   "Delta eight zero, climb to flight level two six zero"
+  ],
+  [
+   223,
+   "Delta three seven, climb to flight level two two zero"
+  ],
+  [
+   281,
+   "Delta eight three zero, descend to flight level three one zero"
+  ],
+  [
+   384,
+   "Delta eight zero, descend to flight level two five zero"
+  ],
+  [
+   390,
+   "United seven nine one, climb to flight level two six zero"
+  ],
+  [
+   409,
+   "American four five, descend to flight level two two zero"
+  ],
+  [
+   416,
+   "Delta three seven, descend to flight level two one zero"
+  ],
+  [
+   424,
+   "Delta three seven, climb to flight level two two zero"
+  ],
+  [
+   431,
+   "Delta three seven, descend to flight level two one zero"
+  ],
+  [
+   437,
+   "Delta three seven, climb to flight level two two zero"
+  ],
+  [
+   728,
+   "American two two zero, climb to flight level two three zero"
+  ],
+  [
+   861,
+   "American two one zero, climb to flight level three one zero"
+  ],
+  [
+   984,
+   "American two two zero, descend to flight level two two zero"
+  ]
+ ],
+ "stats": {
+  "conflicts": 4,
+  "traps": 3,
+  "level_changes": 4,
+  "peak": 10,
+  "solver": {
+   "losses": 0,
+   "handled": 14,
+   "correct": 14,
+   "excursions": 0,
+   "faults": 0,
+   "score": 1400,
+   "closest": 4.04,
+   "t": 1182
+  }
+ }
+}

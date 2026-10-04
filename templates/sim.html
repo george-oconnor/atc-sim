@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+{% block title %}{{ meta.name }}{% endblock %}
+{% block bodyclass %}simpage{% endblock %}
+{% block body %}
+<header class="bar">
+  <a class="home" href="{{ url_for('index') }}" title="Exercises">&larr;</a>
+  <span class="scen">{{ meta.name }} <small id="variant" class="variant">{{ label }}</small></span>
+  <span id="clock" class="clock">00:00</span>
+  <span class="sc">score <b id="score">0</b></span>
+  <span id="stat" class="stat"></span>
+  <span class="spacer"></span>
+  <span class="settings">
+    <button type="button" id="settingsBtn" class="ghostbtn" title="Settings"
+      aria-haspopup="true" aria-expanded="false" aria-controls="settingsMenu">&#9881;&#65038;</button>
+    <span id="settingsMenu" class="settingsmenu" hidden>
+      <label class="tgl">Vectors <input type="checkbox" role="switch" id="toggleVectors" checked><i></i></label>
+      <label class="tgl">Range rings <input type="checkbox" role="switch" id="toggleRings"><i></i></label>
+      <label class="tgl">Pilot voices <input type="checkbox" role="switch" id="toggleVoices" checked><i></i></label>
+      <label class="tgl" id="modeRow" title="How your transmissions are judged">Judged on
+        <select id="mode">
+          <option value="strict">Phraseology</option>
+          <option value="quick">Quick keys</option>
+        </select>
+      </label>
+    </span>
+  </span>
+  <span id="rateBox" class="ratebox">
+    <span class="rateseg" role="group" aria-label="Time acceleration">
+      <button type="button" data-rate="1" class="on">1&times;</button><button type="button" data-rate="2">2&times;</button><button type="button" data-rate="4">4&times;</button><button type="button" data-rate="8">8&times;</button>
+    </span>
+    <select id="rate" title="Time acceleration">
+      <option value="1">1&times;</option><option value="2">2&times;</option>
+      <option value="4">4&times;</option><option value="8">8&times;</option>
+    </select>
+  </span>
+  <button id="helpBtn" class="ghostbtn" title="Phraseology reference">?</button>
+  <button id="pause">&#9654; Start</button>
+</header>
+
+<main class="simgrid">
+  <div class="radarwrap"><canvas id="radar"></canvas><div id="notices" class="notices" aria-live="polite"></div><div id="captions" class="captions" aria-live="polite"></div><button type="button" id="pausedOverlay" class="pausedoverlay" hidden><span class="pausedword">Paused</span><small>tap to resume</small></button></div>
+  <aside class="side">
+    <section class="sec stripsbox" data-sec="traffic">
+      <button type="button" class="sechead" aria-expanded="true"><span class="chev"></span>Traffic
+        <span class="sub">level &rarr; cleared &middot; heading &middot; speed &middot; exit</span></button>
+      <div class="secbody"><div id="strips"></div></div>
+    </section>
+
+    <div class="cmdbox">
+      <div id="cmdbody" hidden>
+        <div id="livert" class="livert" hidden></div>
+        <div id="cmdhint" class="hint"></div>
+        <input id="cmd" autocomplete="off" spellcheck="false">
+        <button id="ptt" class="pttbtn" type="button" tabindex="-1" hidden>
+          <span class="pttlabel">&#127908; Tap to talk</span>
+          <small class="ptthint">tap again to stop, or press space</small>
+        </button>
+        <canvas id="soundgraph" class="soundgraph" width="480" height="44" hidden></canvas>
+        <div class="cmdrow">
+          <button id="hint" class="ghostbtn">Ask the assessor</button>
+          <button id="switchMode" class="ghostbtn"></button>
+          <button id="reportBtn" class="ghostbtn" type="button" hidden
+            title="Speech recognition keeps getting something wrong? Send it in.">&#9873; Report mis-hearing</button>
+          <span id="micStatus" class="micstatus" hidden></span>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div id="toast" class="toast"></div>
+</main>
+
+<div id="modal" class="modal">
+  <div class="sheet">
+    <h3 id="helpTitle">Standard phraseology</h3>
+    <div id="helpBody"></div>
+    <div class="sheetfoot">
+      <a href="{{ url_for('index') }}" class="btn ghost">Exercises</a>
+      <a href="#" class="btn ghost" onclick="location.reload();return false;"
+         title="Fly this same scenario again">Run again</a>
+      <a href="{{ again }}" class="btn ghost" title="A different scenario">New scenario</a>
+      <button class="btn" data-close>Close</button>
+    </div>
+  </div>
+</div>
+
+<div id="reportModal" class="modal">
+  <div class="sheet">
+    <h3>Report a mis-hearing</h3>
+    <div id="reportAnon" hidden>
+      <p class="lead">Reports are kept with an account, so they can be followed up.
+        <a href="{{ url_for('login') }}" target="_blank" rel="noopener">Log in</a> or
+        <a href="{{ url_for('register') }}" target="_blank" rel="noopener">register</a>
+        in a new tab &mdash; this run stays where it is &mdash; then come back and
+        report again.</p>
+    </div>
+    <form id="reportForm" hidden>
+      <p class="lead">Tick the transmissions the recogniser got wrong.</p>
+      <div id="reportAttempts" class="attempts"></div>
+      <label class="field">What did you actually say?
+        <input id="reportSaid" autocomplete="off" spellcheck="false" maxlength="500"
+          placeholder="American nine eight, descend to flight level two eight zero"></label>
+      <div class="recbox">
+        <p class="lead">Optional: record yourself saying it again, the way you said it
+          in the sim. The original audio can&rsquo;t be kept &mdash; the browser&rsquo;s
+          recogniser never hands it over.</p>
+        <div class="recrow">
+          <button type="button" id="recBtn" class="btn ghost">&#9679; Record</button>
+          <audio id="recPlayback" controls hidden></audio>
+          <button type="button" id="recDiscard" class="linkbtn" hidden>Discard</button>
+        </div>
+        <p id="recStatus" class="micstatus" hidden></p>
+        <label id="recConsentRow" class="consent" hidden><input type="checkbox" id="recConsent">
+          I agree to this recording being stored and listened to, to improve speech
+          recognition on this site.</label>
+      </div>
+      <p id="reportMsg" class="micstatus" hidden></p>
+      <div class="sheetfoot">
+        <button type="button" id="reportCancel" class="btn ghost">Cancel</button>
+        <button type="submit" id="reportSend" class="btn">Send report</button>
+      </div>
+    </form>
+    <div id="reportAnonFoot" class="sheetfoot" hidden>
+      <button type="button" id="reportAnonClose" class="btn ghost">Close</button>
+    </div>
+  </div>
+</div>
+
+<div id="startModal" class="modal">
+  <div class="sheet">
+    <h3>Exercise {{ meta.exercise }}</h3>
+    <p class="lead brief">{{ scenario.briefing if scenario else "Building a new scenario…" }}</p>
+    <p class="lead">How will you answer?</p>
+    <div class="modebtns">
+      <button id="modeType" class="btn ghost">&#9000;&#65039; Type</button>
+      <button id="modeSpeak" class="btn ghost">&#127908; Speak</button>
+    </div>
+    <p id="modeNote" class="micstatus" hidden></p>
+    <div class="sheetfoot">
+      <button id="startBtn" class="btn" disabled>&#9654; Start</button>
+    </div>
+  </div>
+</div>
+
+<script data-cfasync="false">window.SCENARIO = {{ scenario | tojson }};
+window.GENERATE = {{ generate | tojson }};</script>
+<script data-cfasync="false" src="{{ asset('js/geo.js') }}"></script>
+<script data-cfasync="false" src="{{ asset('js/speech.js') }}"></script>
+<script data-cfasync="false" src="{{ asset('js/voice.js') }}"></script>
+<script data-cfasync="false" src="{{ asset('js/rt.js') }}"></script>
+<script data-cfasync="false" src="{{ asset('js/aircraft.js') }}"></script>
+<script data-cfasync="false" src="{{ asset('js/sim.js') }}"></script>
+<script data-cfasync="false" src="{{ asset('js/gen.js') }}"></script>
+<script data-cfasync="false" src="{{ asset('js/radar.js') }}"></script>
+<script data-cfasync="false" src="{{ asset('js/feedback.js') }}"></script>
+<script data-cfasync="false" src="{{ asset('js/ui.js') }}"></script>
+<script data-cfasync="false" src="{{ asset('js/main.js') }}"></script>
+{% endblock %}

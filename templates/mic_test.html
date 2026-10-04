@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}Microphone test{% endblock %}
+{% block body %}
+<div class="page narrow">
+  <header class="pagehead">
+    <h1>Microphone test</h1>
+    <p>Checks your microphone and speech recognition on their own, separate
+       from the simulator, so a problem here isn't tangled up with anything
+       else. Press start, talk normally, and watch what happens below.</p>
+    <nav><a href="{{ url_for('index') }}">&larr; Exercises</a></nav>
+  </header>
+
+  <div class="mtcaps">
+    <div class="mtcap"><span>Secure connection</span><span id="capSecure" class="pill warn">checking&hellip;</span></div>
+    <div class="mtcap"><span>Speech recognition API</span><span id="capSR" class="pill warn">checking&hellip;</span></div>
+    <div class="mtcap"><span>Microphone API</span><span id="capGUM" class="pill warn">checking&hellip;</span></div>
+    <div class="mtcap"><span>Microphone permission</span><span id="capPerm" class="pill warn">checking&hellip;</span></div>
+  </div>
+
+  <div class="mtmeter">
+    <div class="mtmeterlabel">Microphone level <span class="sub">(proves audio is reaching the browser, nothing to do with recognition)</span></div>
+    <div class="mtmeterbar"><div id="meterBar" class="mtmeterfill"></div><div id="meterPeak" class="mtmeterpeak"></div></div>
+  </div>
+
+  <div class="mtbtns">
+    <button id="startBtn" class="btn">&#9654; Start test</button>
+    <button id="stopBtn" class="btn ghost" disabled>&#9632; Stop</button>
+  </div>
+
+  <div id="evlog" class="evlog"></div>
+
+  <details class="mtua">
+    <summary>Browser identification</summary>
+    <div id="ua"></div>
+  </details>
+
+  <div class="ref">
+    <h4>Reading the log</h4>
+    <div class="hrow"><code>onstart</code><span>the recogniser is running</span></div>
+    <div class="hrow"><code>onaudiostart</code><span>it can hear something, before it knows if it is speech</span></div>
+    <div class="hrow"><code>onspeechstart</code><span>it thinks it is hearing speech</span></div>
+    <div class="hrow"><code>interim / FINAL</code><span>a guess at what you said, then its settled answer</span></div>
+    <div class="hrow"><code>onerror</code><span>something went wrong &mdash; the code after it says what</span></div>
+    <div class="hrow"><code>onend</code><span>the recogniser stopped (and, if the test is still running, it is restarted automatically)</span></div>
+    <p class="lead">If the level meter moves but no <code>onresult</code> line
+      ever appears, your microphone works but the browser cannot reach its
+      speech-to-text service &mdash; try a different network, turn off a VPN
+      or ad blocker, or try a different browser.</p>
+  </div>
+</div>
+<script data-cfasync="false" src="{{ asset('js/mictest.js') }}"></script>
+{% endblock %}

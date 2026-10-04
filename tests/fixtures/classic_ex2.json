@@ -1,0 +1,160 @@
+{
+  "id": "ex2",
+  "order": 2,
+  "exercise": 2,
+  "name": "Exercise 2 \u2014 The bend",
+  "difficulty": "Medium",
+  "duration_min": 19,
+  "summary": "The corridor turns. Nine aircraft, and nothing turns unless you tell it to.",
+  "briefing": "The corridor bends to the north-east at the midpoint. Aircraft fly the heading you give them and nothing else \u2014 if you do not turn them at the bend they will leave controlled airspace. Nine aircraft, both directions, and most of them need a level change to reach their exit level.",
+  "separation": {
+    "lateral_nm": 3,
+    "vertical_ft": 1000
+  },
+  "view": {
+    "x": -4,
+    "y": 2,
+    "range_nm": 40
+  },
+  "corridors": [
+    {
+      "name": "BRAVO",
+      "width_nm": 22,
+      "entry": "WEST",
+      "exit": "NORTHEAST",
+      "path": [
+        [
+          -34,
+          -8
+        ],
+        [
+          0,
+          -8
+        ],
+        [
+          26,
+          18
+        ]
+      ]
+    }
+  ],
+  "traffic": [
+    {
+      "callsign": "UAL130",
+      "type": "B738",
+      "fl": 230,
+      "exitFl": 210,
+      "speed": 300,
+      "corridor": 0,
+      "dir": -1,
+      "t": 8,
+      "x": 24.59,
+      "y": 16.59,
+      "hdg": 225
+    },
+    {
+      "callsign": "AAL451",
+      "type": "B738",
+      "fl": 230,
+      "exitFl": 230,
+      "speed": 280,
+      "corridor": 0,
+      "dir": 1,
+      "t": 12,
+      "x": -32.0,
+      "y": -8.0,
+      "hdg": 90
+    },
+    {
+      "callsign": "DAL77",
+      "type": "B738",
+      "fl": 260,
+      "exitFl": 260,
+      "speed": 290,
+      "corridor": 0,
+      "dir": 1,
+      "t": 56,
+      "x": -32.0,
+      "y": -9.0,
+      "hdg": 90
+    },
+    {
+      "callsign": "DAL66",
+      "type": "B738",
+      "fl": 240,
+      "exitFl": 270,
+      "speed": 290,
+      "corridor": 0,
+      "dir": -1,
+      "t": 140,
+      "x": 27.4,
+      "y": 13.77,
+      "hdg": 225
+    },
+    {
+      "callsign": "AAL34",
+      "type": "B738",
+      "fl": 280,
+      "exitFl": 240,
+      "speed": 280,
+      "corridor": 0,
+      "dir": 1,
+      "t": 250,
+      "x": -32.0,
+      "y": -14.97,
+      "hdg": 89
+    },
+    {
+      "callsign": "DAL208",
+      "type": "B738",
+      "fl": 250,
+      "exitFl": 250,
+      "speed": 310,
+      "corridor": 0,
+      "dir": -1,
+      "t": 258,
+      "x": 21.07,
+      "y": 20.11,
+      "hdg": 224
+    },
+    {
+      "callsign": "AAL62",
+      "type": "B738",
+      "fl": 260,
+      "exitFl": 260,
+      "speed": 270,
+      "corridor": 0,
+      "dir": -1,
+      "t": 327,
+      "x": 23.88,
+      "y": 17.29,
+      "hdg": 225
+    },
+    {
+      "callsign": "UAL87",
+      "type": "B738",
+      "fl": 250,
+      "exitFl": 250,
+      "speed": 320,
+      "corridor": 0,
+      "dir": 1,
+      "t": 380,
+      "x": -32.0,
+      "y": 0.96,
+      "hdg": 91
+    },
+    {
+      "callsign": "UAL17",
+      "type": "B738",
+      "fl": 250,
+      "exitFl": 210,
+      "speed": 300,
+      "corridor": 0,
+      "dir": 1,
+      "t": 501,
+      "x": -32.0,
+      "y": -3.02,
+      "hdg": 91
+    }
+  ]
+}

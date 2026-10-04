@@ -1,0 +1,104 @@
+{
+  "id": "ex1",
+  "order": 1,
+  "exercise": 1,
+  "name": "Exercise 1 \u2014 Familiarisation",
+  "difficulty": "Easy",
+  "duration_min": 16,
+  "summary": "A straight corridor and five aircraft. Learn the scan, the label and the three instructions.",
+  "briefing": "A straight corridor, east\u2013west, five aircraft. Keep everything inside the walls, keep 1,000 ft or 3 NM between any two aircraft, and hand each one off at the exit flight level shown on the third row of its label. Press \u201cAsk the assessor\u201d whenever you want a prompt \u2014 that is what Exercise 1 is for.",
+  "separation": {
+    "lateral_nm": 3,
+    "vertical_ft": 1000
+  },
+  "view": {
+    "x": 0,
+    "y": 0,
+    "range_nm": 38
+  },
+  "corridors": [
+    {
+      "name": "ALPHA",
+      "width_nm": 22,
+      "entry": "WEST",
+      "exit": "EAST",
+      "path": [
+        [
+          -32,
+          0
+        ],
+        [
+          32,
+          0
+        ]
+      ]
+    }
+  ],
+  "traffic": [
+    {
+      "callsign": "AAL451",
+      "type": "B738",
+      "fl": 230,
+      "exitFl": 230,
+      "speed": 280,
+      "corridor": 0,
+      "dir": 1,
+      "t": 7,
+      "x": -30.0,
+      "y": 0.0,
+      "hdg": 90
+    },
+    {
+      "callsign": "UAL130",
+      "type": "B738",
+      "fl": 230,
+      "exitFl": 210,
+      "speed": 290,
+      "corridor": 0,
+      "dir": -1,
+      "t": 16,
+      "x": 30.0,
+      "y": -0.0,
+      "hdg": 270
+    },
+    {
+      "callsign": "AAL62",
+      "type": "B738",
+      "fl": 270,
+      "exitFl": 250,
+      "speed": 270,
+      "corridor": 0,
+      "dir": -1,
+      "t": 261,
+      "x": 30.0,
+      "y": -0.0,
+      "hdg": 270
+    },
+    {
+      "callsign": "DAL77",
+      "type": "B738",
+      "fl": 250,
+      "exitFl": 250,
+      "speed": 300,
+      "corridor": 0,
+      "dir": 1,
+      "t": 281,
+      "x": -30.0,
+      "y": -2.0,
+      "hdg": 90
+    },
+    {
+      "callsign": "UAL9",
+      "type": "B738",
+      "fl": 290,
+      "exitFl": 290,
+      "speed": 310,
+      "corridor": 0,
+      "dir": 1,
+      "t": 300,
+      "x": -30.0,
+      "y": 8.0,
+      "hdg": 90
+    }
+  ]
+}

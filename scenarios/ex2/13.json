@@ -1,0 +1,284 @@
+{
+ "id": "ex2",
+ "order": 2,
+ "exercise": 2,
+ "name": "Exercise 2 — The bend",
+ "difficulty": "Medium",
+ "duration_min": 19,
+ "summary": "The corridor turns. Eight to ten aircraft, and nothing turns unless you tell it to.",
+ "separation": {
+  "lateral_nm": 3,
+  "vertical_ft": 1000
+ },
+ "corridors": [
+  {
+   "name": "BRAVO",
+   "turn": 65,
+   "path": [
+    [
+     -19.24,
+     -22.98
+    ],
+    [
+     -6.24,
+     12.73
+    ],
+    [
+     28.62,
+     15.78
+    ]
+   ],
+   "width_nm": 22,
+   "entry": "SOUTH",
+   "exit": "EAST"
+  }
+ ],
+ "traffic": [
+  {
+   "callsign": "AAL990",
+   "type": "A320",
+   "fl": 230,
+   "exitFl": 230,
+   "speed": 285,
+   "corridor": 0,
+   "dir": -1,
+   "t": 0,
+   "x": 10.98,
+   "y": 15.59,
+   "hdg": 265,
+   "off": -1.35,
+   "s0": 17.59,
+   "role": "background"
+  },
+  {
+   "callsign": "UAL77",
+   "type": "B752",
+   "fl": 270,
+   "exitFl": 270,
+   "speed": 305,
+   "corridor": 0,
+   "dir": -1,
+   "t": 92,
+   "x": 26.43,
+   "y": 17.87,
+   "hdg": 265,
+   "off": -2.27,
+   "s0": 2,
+   "role": "conflict:headon",
+   "event": 1
+  },
+  {
+   "callsign": "UAL2",
+   "type": "B738",
+   "fl": 270,
+   "exitFl": 290,
+   "speed": 320,
+   "corridor": 0,
+   "dir": 1,
+   "t": 158,
+   "x": -20.94,
+   "y": -20.23,
+   "hdg": 20,
+   "off": -2.54,
+   "s0": 2,
+   "role": "conflict:headon",
+   "event": 1
+  },
+  {
+   "callsign": "UAL723",
+   "type": "A20N",
+   "fl": 280,
+   "exitFl": 280,
+   "speed": 320,
+   "corridor": 0,
+   "dir": -1,
+   "t": 204,
+   "x": 26.83,
+   "y": 13.27,
+   "hdg": 265,
+   "off": 2.34,
+   "s0": 2,
+   "role": "trap:headon",
+   "event": 0
+  },
+  {
+   "callsign": "UAL577",
+   "type": "B752",
+   "fl": 290,
+   "exitFl": 280,
+   "speed": 270,
+   "corridor": 0,
+   "dir": 1,
+   "t": 231,
+   "x": -15.9,
+   "y": -22.07,
+   "hdg": 20,
+   "off": 2.82,
+   "s0": 2,
+   "role": "trap:headon",
+   "event": 0
+  },
+  {
+   "callsign": "DAL550",
+   "type": "B763",
+   "fl": 220,
+   "exitFl": 230,
+   "speed": 320,
+   "corridor": 0,
+   "dir": -1,
+   "t": 256,
+   "x": 26.93,
+   "y": 12.1,
+   "hdg": 265,
+   "off": 3.52,
+   "s0": 2,
+   "role": "conflict:headon",
+   "event": 2
+  },
+  {
+   "callsign": "DAL26",
+   "type": "B763",
+   "fl": 290,
+   "exitFl": 290,
+   "speed": 290,
+   "corridor": 0,
+   "dir": -1,
+   "t": 340,
+   "x": 26.36,
+   "y": 18.66,
+   "hdg": 265,
+   "off": -3.06,
+   "s0": 2,
+   "role": "conflict:headon",
+   "event": 3
+  },
+  {
+   "callsign": "UAL604",
+   "type": "B739",
+   "fl": 220,
+   "exitFl": 240,
+   "speed": 300,
+   "corridor": 0,
+   "dir": 1,
+   "t": 432,
+   "x": -14.5,
+   "y": -22.58,
+   "hdg": 20,
+   "off": 4.32,
+   "s0": 2,
+   "role": "conflict:headon",
+   "event": 2
+  },
+  {
+   "callsign": "AAL210",
+   "type": "A20N",
+   "fl": 290,
+   "exitFl": 290,
+   "speed": 310,
+   "corridor": 0,
+   "dir": 1,
+   "t": 517,
+   "x": -21.67,
+   "y": -19.97,
+   "hdg": 20,
+   "off": -3.31,
+   "s0": 2,
+   "role": "conflict:headon",
+   "event": 3
+  }
+ ],
+ "view": {
+  "x": 0,
+  "y": 0,
+  "range_nm": 33
+ },
+ "briefing": "The corridor comes in from the south and bends right by about 65° towards the east. Aircraft fly the heading you give them and nothing else — if you do not turn them at the bend they will leave controlled airspace. 9 aircraft, both directions, and several need a level change to reach their exit level.",
+ "seed": 6,
+ "variant": "13",
+ "solution": [
+  [
+   141,
+   "American nine nine zero, turn left heading two zero zero"
+  ],
+  [
+   173,
+   "United two, climb to flight level two nine zero"
+  ],
+  [
+   271,
+   "Delta five five zero, climb to flight level two three zero"
+  ],
+  [
+   339,
+   "United seven seven, turn left heading two zero zero"
+  ],
+  [
+   345,
+   "United two, climb to flight level three zero zero"
+  ],
+  [
+   409,
+   "United two, turn right heading zero eight five"
+  ],
+  [
+   415,
+   "United seven two three, turn left heading two zero zero"
+  ],
+  [
+   447,
+   "United six zero four, climb to flight level two four zero"
+  ],
+  [
+   476,
+   "Delta five five zero, turn left heading two zero zero"
+  ],
+  [
+   485,
+   "United five seven seven, descend to flight level two eight zero"
+  ],
+  [
+   502,
+   "United five seven seven, turn right heading zero eight five"
+  ],
+  [
+   517,
+   "Delta two six, descend to flight level two eight zero"
+  ],
+  [
+   523,
+   "United two, descend to flight level two nine zero"
+  ],
+  [
+   598,
+   "Delta two six, turn left heading two zero zero"
+  ],
+  [
+   685,
+   "United six zero four, turn right heading zero eight five"
+  ],
+  [
+   720,
+   "Delta two six, climb to flight level two nine zero"
+  ],
+  [
+   780,
+   "American two one zero, turn right heading zero eight five"
+  ]
+ ],
+ "stats": {
+  "conflicts": 3,
+  "traps": 2,
+  "level_changes": 4,
+  "peak": 8,
+  "solver": {
+   "losses": 0,
+   "handled": 9,
+   "correct": 9,
+   "excursions": 0,
+   "faults": 0,
+   "score": 900,
+   "closest": 4.08,
+   "t": 1064
+  }
+ }
+}

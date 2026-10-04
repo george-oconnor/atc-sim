@@ -1,0 +1,20 @@
+# Local state
+.venv/
+data/
+run/
+__pycache__/
+*.pyc
+.env
+.claude/
+
+# Backups made before editing live files (name.bak-YYYYMMDDHHMM)
+*.bak-*
+
+# This server's process manager config (not published)
+supervisord.conf
+
+# Left over from the old Cloudflare tunnel setup
+cloudflared/
+tunnel.sh
+setup-tunnel.sh
+url.sh

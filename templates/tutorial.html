@@ -1,0 +1,161 @@
+{% extends "base.html" %}
+{% block title %}How to read the radar{% endblock %}
+{% block body %}
+<div class="page narrow">
+  <header class="pagehead">
+    <h1>How to read the radar</h1>
+    <p>What every number on the screen means, and what you're actually meant
+       to do with it. Read this once, then start Exercise 1.</p>
+    <nav><a href="{{ url_for('index') }}">&larr; Exercises</a></nav>
+  </header>
+
+  <div class="tut">
+
+    <section>
+      <h3>The picture</h3>
+      <p class="lead">A corridor of controlled airspace, walls on both sides.
+        Aircraft fly through it. Nothing turns, climbs or descends unless you
+        tell it to &mdash; a straight line at a fixed level, forever, until you
+        say otherwise.</p>
+      <p class="lead" style="margin-bottom:0">Your job for each one: keep it
+        inside the walls, keep it 1,000 ft or 3 NM away from every other
+        aircraft, and hand it off at the exit flight level printed on its
+        label &mdash; the third row, left-hand number.</p>
+    </section>
+
+    <section>
+      <h3>Reading an aircraft</h3>
+      <p class="lead">Every aircraft on the radar is a small ring with a label
+        stuck to it. The label is always the same three rows, in the same
+        order:</p>
+
+      <svg class="diagram" viewBox="0 0 480 210" role="img"
+           aria-label="Diagram of an aircraft's radar label, showing the callsign, current and cleared flight level, exit flight level, speed, leader line and history dots">
+        <!-- history dots: where it has been -->
+        <circle cx="34" cy="176" r="2.5" fill="#2a8a60" opacity="0.35"/>
+        <circle cx="48" cy="167" r="2.5" fill="#2a8a60" opacity="0.55"/>
+        <circle cx="61" cy="159" r="2.5" fill="#2a8a60" opacity="0.8"/>
+        <!-- RPI: current position -->
+        <circle cx="74" cy="151" r="6" fill="none" stroke="#4dffb0" stroke-width="2"/>
+        <!-- leader line: projected 1 minute ahead -->
+        <line x1="74" y1="151" x2="168" y2="120" stroke="#4dffb0" stroke-width="1.5"/>
+        <!-- connector from RPI to label -->
+        <line x1="74" y1="151" x2="118" y2="62" stroke="#4dffb0" stroke-width="1" opacity="0.4"/>
+
+        <!-- label text block -->
+        <text x="120" y="46" font-family="ui-monospace,Menlo,Consolas,monospace"
+              font-size="20" font-weight="600" fill="#9dffd4">AAL451</text>
+        <text x="120" y="74" font-family="ui-monospace,Menlo,Consolas,monospace"
+              font-size="20" fill="#9dffd4">080</text>
+        <text x="182" y="74" font-family="ui-monospace,Menlo,Consolas,monospace"
+              font-size="20" fill="#ffc233">&#8593; 200</text>
+        <text x="120" y="102" font-family="ui-monospace,Menlo,Consolas,monospace"
+              font-size="20" fill="#4dffb0">220</text>
+        <text x="228" y="102" font-family="ui-monospace,Menlo,Consolas,monospace"
+              font-size="20" fill="#5f8a76">251</text>
+
+        <!-- numbered markers -->
+        <g font-family="ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#04120c" font-weight="700" text-anchor="middle">
+          <circle cx="74" cy="151" r="10" fill="#4dffb0"/><text x="74" y="155">1</text>
+          <circle cx="34" cy="176" r="10" fill="#2a8a60"/><text x="34" y="180">2</text>
+          <circle cx="130" cy="122" r="10" fill="#4dffb0"/><text x="130" y="126">3</text>
+          <circle cx="304" cy="40" r="10" fill="#9dffd4"/><text x="304" y="44">4</text>
+          <circle cx="304" cy="68" r="10" fill="#9dffd4"/><text x="304" y="72">5</text>
+          <circle cx="342" cy="68" r="10" fill="#ffc233"/><text x="342" y="72">6</text>
+          <circle cx="304" cy="96" r="10" fill="#4dffb0"/><text x="304" y="100">7</text>
+          <circle cx="342" cy="96" r="10" fill="#5f8a76"/><text x="342" y="100">8</text>
+        </g>
+      </svg>
+
+      <ol class="legend">
+        <li><span class="n">1</span><span><b>The ring</b> &mdash; where it actually is, right now.</span></li>
+        <li><span class="n">2</span><span><b>History dots</b> &mdash; where it's been. Fading trail behind it.</span></li>
+        <li><span class="n">3</span><span><b>Leader line</b> &mdash; where it'll be in one minute. Longer line, faster aircraft.</span></li>
+        <li><span class="n">4</span><span><b>Callsign</b> &mdash; say the airline name, then every digit.</span></li>
+        <li><span class="n">5</span><span><b>Current flight level</b> &mdash; where it is now. FL080 = 8,000 ft.</span></li>
+        <li><span class="n">6</span><span><b>Climbing / descending, and cleared level</b> &mdash; the arrow shows which way; the number is where you told it to go.</span></li>
+        <li><span class="n">7</span><span><b>Exit flight level</b> &mdash; where it must be when it leaves your airspace. This is the target.</span></li>
+        <li><span class="n">8</span><span><b>Speed</b> &mdash; knots. You can't change this, only altitude and heading.</span></li>
+      </ol>
+    </section>
+
+    <section>
+      <h3>What the colours are telling you</h3>
+      <p class="lead">The label isn't just data &mdash; it's actively telling you
+        what still needs doing.</p>
+      <ul class="swatches">
+        <li><b style="color:#ffc233">amber cleared FL</b>still climbing or descending to get there &mdash; not there yet.</li>
+        <li><b style="color:#5f8a76">grey cleared FL</b>arrived. Current and cleared level now match.</li>
+        <li><b style="color:#ffc233">amber exit FL</b>not at its exit level yet &mdash; you still have work to do.</li>
+        <li><b style="color:#4dffb0">green exit FL</b>at its exit level. Leave it there and it'll score correctly.</li>
+        <li><b style="color:#ffc233">amber callsign</b>close enough to another aircraft to be worth watching.</li>
+        <li><b style="color:#ff4d4d">red callsign</b>separation is actually lost &mdash; under 1,000&nbsp;ft <i>and</i> under 3&nbsp;NM from another aircraft.</li>
+        <li><b style="color:#ff8a3d">orange callsign</b>outside the corridor walls.</li>
+        <li><b style="color:#ffffff">white ring</b>selected &mdash; this is the aircraft your next transmission will go to.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>The strip panel</h3>
+      <p class="lead">The same information again, listed down the right-hand
+        side &mdash; easier to scan when you have several aircraft at once.</p>
+
+      <div class="example-strip">
+        <div class="strip alert">
+          <div class="r1"><b>AAL451</b><i>American four five one</i>
+            <span class="goal">exit 220</span></div>
+          <div class="r2">
+            <span title="current / cleared">080&#8593;200</span>
+            <span title="heading">H070</span>
+            <span title="speed">251</span>
+          </div>
+        </div>
+      </div>
+
+      <ul class="legend">
+        <li><span class="n">a</span><span><b>Current &rarr; cleared</b> &mdash; same as the radar label's row 2.</span></li>
+        <li><span class="n">b</span><span><b>Heading</b> &mdash; which way it's pointed, three digits.</span></li>
+        <li><span class="n">c</span><span><b>Speed</b> &mdash; knots.</span></li>
+        <li><span class="n">d</span><span><b>Exit</b> &mdash; the target level, top right. Turns green once reached.</span></li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Giving instructions</h3>
+      <p class="lead">There are exactly three. Callsign first, then the
+        instruction, every number said digit by digit &mdash; never "seventy",
+        always "seven zero".</p>
+      <div class="hrow"><code>Turn</code><span>&ldquo;American four five one,
+        turn right heading zero seven zero&rdquo;</span></div>
+      <div class="hrow"><code>Climb</code><span>&ldquo;Delta six six,
+        climb to flight level two eight zero&rdquo;</span></div>
+      <div class="hrow"><code>Descend</code><span>&ldquo;United eight seven,
+        descend to flight level two seven zero&rdquo;</span></div>
+      <div class="hrow"><code>Correction</code><span>said wrong? Restate it:
+        &ldquo;&hellip; correction, United eight seven, descend to flight
+        level two six zero&rdquo;</span></div>
+    </section>
+
+    <section>
+      <h3>What you're actually trying to do</h3>
+      <p class="lead">Every aircraft that enters has to leave again, at its
+        exit level, without ever getting too close to another one or
+        wandering outside the walls. That's the whole job.</p>
+      <ul class="swatches">
+        <li><b>+100</b>left at its exit flight level</li>
+        <li><b>&minus;40</b>left at the wrong level</li>
+        <li><b>&minus;60</b>outside the corridor walls, per excursion</li>
+        <li><b>&minus;80</b>never recovered, or left backwards</li>
+        <li><b>&minus;150</b>loss of separation, per pair</li>
+        <li><b>&minus;5</b>each phraseology fault</li>
+      </ul>
+    </section>
+
+    <div class="tutcta">
+      <a class="btn" href="{{ url_for('sim', ex_id='ex1') }}">Start Exercise 1</a>
+      <a class="btn ghost" href="{{ url_for('phraseology') }}">Practise phraseology first</a>
+    </div>
+
+  </div>
+</div>
+{% endblock %}
